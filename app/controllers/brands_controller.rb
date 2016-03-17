@@ -14,9 +14,9 @@ class BrandsController < ApplicationController
   end
 
   # # GET /brands/new
-  # def new
-  #   @brand = Brand.new
-  # end
+  def new
+    @brand = Brand.new
+  end
   #
   # # GET /brands/1/edit
   # def edit

@@ -1,6 +1,7 @@
 class CreateBrands < ActiveRecord::Migration
   def change
     create_table :brands do |t|
+      t.belongs_to :user, index: true
       t.string :title
       t.string :logo
       t.string :url

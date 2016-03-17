@@ -4,7 +4,7 @@ RSpec.describe BrandPolicy do
 
   let(:user) { User.new }
 
-  subject { described_class }
+  subject { BrandPolicy.new }
 
   permissions ".scope" do
     pending "add some examples to (or delete) #{__FILE__}"
