@@ -1,0 +1,14 @@
+<h1>Users</h1>
+
+<% @users.each do |user| %>
+
+Name: <%= user.name %> <%= gravatar_for user %> <br>
+Email: <%= user.email %> <br>
+Admin: <%= user.admin? %> <br>
+
+<hr>
+<%= link_to "Show", user %>
+<%= link_to "Edit", edit_user_path(user) %>
+<%= link_to "Remove", user, method: :delete, data: { confirm: "Are you sure?" } %>
+<hr>
+<% end %>
