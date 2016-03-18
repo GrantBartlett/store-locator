@@ -8,8 +8,17 @@
 </head>
 <body>
 
-  <%= yield %>
-  <%= debug(params) if Rails.env.development? %>
 
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <%= render partial: 'shared/primary_navigation' %>
+    </div>
+  </nav>
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <%= debug(params) if Rails.env.development? %>
 </body>
 </html>
