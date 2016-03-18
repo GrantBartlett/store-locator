@@ -13,7 +13,7 @@
     </a>
     <ul class="dropdown-menu">
       <li role="separator" class="divider"></li>
-      <li><%= link_to "Sign out", logout_path %></li>
+      <li><%= link_to "Log out", logout_path, method: :delete %></li>
     </ul>
   </li>
   <% else %>
