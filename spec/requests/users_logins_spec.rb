@@ -1,22 +1,21 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe "User Registering", :type => :request do
+RSpec.describe "User Logging in", type: :request do
 
-  it "rejects invalid parameters in sign up form" do
-    get "/users/new"
+  it "rejects invalid parameters in sign in form" do
+    get "/login"
     expect(response).to render_template(:new)
-    post "/users", :user => {:name => "Grant"}
+    post "/login", :user => {:email => "", :password => ""}
     expect(response).to render_template(:new)
   end
 
-  it "allows valid parameters in a sign up form" do
-    get "/users/new"
+  it "allows valid parameters in the sign in form" do
+    get "/login"
     expect(response).to render_template(:new)
     post "/users", :user => {:name => "Grant", :email => "grant@smswmedia.com",
       :password => "foobar", :password_confirmation => "foobar"}
       expect(response).to redirect_to(assigns(:user))
       follow_redirect!
       expect(response).to render_template(:show)
+    end
   end
-
-end

@@ -6,6 +6,13 @@ Name: <%= user.name %> <%= gravatar_for user %> <br>
 Email: <%= user.email %> <br>
 Admin: <%= user.admin? %> <br>
 
+
+<% if logged_in? %>
+# Links for logged-in users
+<% else %>
+# Links for non-logged-in-users
+<% end %>
+
 <hr>
 <%= link_to "Show", user %>
 <%= link_to "Edit", edit_user_path(user) %>
