@@ -1,8 +1,8 @@
 FactoryGirl.define do
-  # This will use the User class (Admin would have been guessed)
-  factory :user, class: User do
-    first "admin"
-    email "admin@example.com"
-    admin  true
+  factory :admin, class: User do
+    name Faker::Name.name
+    email Faker::Internet.email
+    admin true
+    password User.digest('password')
   end
 end
