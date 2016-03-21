@@ -1,30 +1,20 @@
 require 'rails_helper'
 
-RSpec.describe "User logging in", type: :request do
+RSpec.describe "Users", type: :request do
 
-  it "rejects invalid parameters in sign in form" do
-    user = FactoryGirl.create(:admin)
-    # get "/login"
-    # expect(response).to render_template(:new)
-    # post "/login", user
-    # expect(response).to render_template(:new)
+  it "will NOT be able to login with INVALID credentials" do
+    get "/login"
+    render_template 'sessions/new'
+    post "/login", session: { email: "", password: "" }
+    render_template 'sessions/new'
   end
 
-  # it "with VALID parameters" do
-  #
-  #   user = build(:user)
-  #
-  #   # it 'sets the type_id field' do
-  #   #   # expect(resource.type_id).to equal(type.id)
-  #   #
-  #   #   get "/login"
-  #   #   # expect(response).to render_template(:new)
-  #   #   # post "/users", :user =>
-  #   #   # {
-  #   #   #   :email => @user.email,
-  #   #   #   :password => 'password'
-  #   #   # }
-  #   #   # expect(response).to redirect_to(assigns(@user))
-  #   # end
-  # end
+  it "will be able to login with valid credentials" do
+    get "/login"
+    user = create(:user, password: "password")
+    post "/login", session: { email: user.email, password: 'password'}
+    redirect_to user
+    follow_redirect!
+    render_template 'users/show'
+  end
 end
