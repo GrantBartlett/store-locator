@@ -27,7 +27,6 @@ example_id                                            | status  | run_time      
 ./spec/policies/brand_policy_spec.rb[1:5:1]           | pending | 0.00001 seconds |
 ./spec/requests/users_logins_spec.rb[1:1]             | passed  | 0.01168 seconds |
 ./spec/requests/users_logins_spec.rb[1:2]             | passed  | 0.51253 seconds |
-./spec/requests/users_signups_spec.rb[1:1:1]          | passed  | 0.01878 seconds |
-./spec/requests/users_signups_spec.rb[1:1:2]          | failed  | 0.00268 seconds |
-./spec/requests/users_signups_spec.rb[1:2]            | passed  | 0.45494 seconds |
+./spec/requests/users_signups_spec.rb[1:1:1]          | passed  | 0.49938 seconds |
+./spec/requests/users_signups_spec.rb[1:1:2]          | passed  | 0.01987 seconds |
 ./spec/views/users/create.html.erb_spec.rb[1:1]       | pending | 0.00002 seconds |
