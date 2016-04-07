@@ -1,5 +1,29 @@
 language: ruby
+sudo: false
+before_install:
+  - gem install bundler
+  - "rm ${BUNDLE_GEMFILE}.lock"
+  - cd $TRAVIS_BUILD_DIR
+before_script:
+  - bundle update
+cache: bundler
 rvm:
-  - 1.9.2
-before_script: "bundle exec rake db:migrate"
-script: "bundle exec rspec spec/"
+  - 2.2.4
+  - 2.3.0
+  - ruby-head
+matrix:
+  include:
+    # Latest compiled version in http://rubies.travis-ci.org
+    - rvm: jruby-9.0.5.0
+      jdk: oraclejdk8
+      env:
+        - "JRUBY_OPTS='--dev -J-Xmx1024M'"
+        - "GEM='ap'"
+  allow_failures:
+    - rvm: ruby-head
+  fast_finish: true
+notifications:
+  email: false
+bundler_args: --without test --jobs 3 --retry 3
+services:
+  - docker
