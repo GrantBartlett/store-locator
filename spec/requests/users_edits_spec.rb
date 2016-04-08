@@ -1,22 +1,19 @@
 require 'rails_helper'
 
-RSpec.describe "Users Edits", type: :request do
-  describe "GET /users_edits" do
+RSpec.describe "user#update", type: :request do
+  let(:user) { create(:user, password: 'password') }
 
-    before(:each) do
-      @user_to_update = create(:user, password: 'password')
+  context 'when user updates profile' do
+    it 'should return 200 for edit_user_path' do
+      get edit_user_path(user)
+      expect(response).to have_http_status(:success)
     end
 
-    it "returns 200 for edit_user_path" do
-      get edit_user_path(@user_to_update)
-      expect(response).to have_http_status(200)
-    end
-
-    it "accepts valid update parameters and saves" do
-      patch user_path(@user_to_update), :user =>
+    it "should save" do
+      patch user_path(user), :user =>
       {
         :name => Faker::Name.name,
-        :email => @user_to_update.email,
+        :email => user.email,
         :password => 'password',
         :password_confirmation => 'password'
       }
@@ -24,11 +21,11 @@ RSpec.describe "Users Edits", type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    it "rejects invalid update parameters" do
-      patch user_path(@user_to_update), :user =>
+    it "should reject missing fields" do
+      patch user_path(user), :user =>
       {
         :name => "",
-        :email => @user_to_update.email,
+        :email => user.email,
         :password => 'password',
         :password_confirmation => 'password'
       }
