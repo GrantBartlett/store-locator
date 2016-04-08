@@ -30,7 +30,7 @@ class UsersController < ApplicationController
         redirect_to users_path
       end
     else
-      redirect_to users_path
+      head 401
     end
   end
 

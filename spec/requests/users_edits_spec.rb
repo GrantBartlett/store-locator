@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "UsersEdits", type: :request do
+RSpec.describe "Users Edits", type: :request do
   describe "GET /users_edits" do
 
     before(:each) do
