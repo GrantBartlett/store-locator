@@ -26,21 +26,15 @@ class UsersController < ApplicationController
     if is_admin?
       @user = User.find(params[:id])
       if @user.destroy
-        log_out
         @user.destroy
-        redirect_to 'index'
-      else
-        redirect_to @user
+        redirect_to users_path
       end
     else
-      redirect_to 'index'
+      redirect_to users_path
     end
   end
 
   def show
-    if is_admin?
-      redirect_to '/is-admin'
-    end
     @user = User.find(params[:id])
   end
 
