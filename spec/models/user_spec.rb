@@ -30,7 +30,7 @@ RSpec.describe "User", type: :model do
     end
 
     it 'should not be mixed case when saving' do
-      mixed_case_email = 'gRaNt@smswmedia.com'
+      mixed_case_email = 'eXaMpLe@eXaMpLe.com'
       test_user.email = mixed_case_email
       test_user.save
       expect(test_user.email).not_to eq(mixed_case_email)

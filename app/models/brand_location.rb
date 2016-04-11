@@ -1,3 +1,3 @@
 class BrandLocation < ActiveRecord::Base
-  belongs_to :brand_location
+  belongs_to :brand
 end
