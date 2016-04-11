@@ -20,10 +20,14 @@ class BrandsController < ApplicationController
 
   def update
     @brand = Brand.find(params[:id])
-    if @brand.update_attributes(brand_params) && is_admin?
-      redirect_to @brand
+    if is_admin?
+      if @brand.update_attributes(brand_params) && is_admin?
+        redirect_to @brand
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      redirect_to @brand
     end
   end
 

@@ -1,7 +1,6 @@
 <h1>Brands</h1>
 
 <% @brands.each do |brand| %>
-
 Title: <%= brand.title %>
 Logo: <%= brand.logo %> <br>
 Url: <%= brand.url %> <br>
@@ -9,10 +8,14 @@ Description: <%= brand.description %> <br>
 Brand created by: <%= link_to user_name(brand.user_id), user_path(brand.user_id) %>
 
 <hr>
-<%= link_to "Show", brand %>
-<%= link_to "Edit", edit_brand_path(brand) %>
-<%= link_to "Remove", brand, method: :delete, data: { confirm: "Are you sure?" } %>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+<%= link_to "Show", brand, :class => "btn btn-default" %>
+<%= link_to "Edit", edit_brand_path(brand), :class => "btn btn-default"  %>
+<%= link_to "Remove", brand, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-default"  %>
+</div>
+
 <hr>
 <% end %>
 
-<%= link_to "New Brand", new_brand_path %>
+<%= link_to "Create New Brand", new_brand_path, :class => "btn btn-success" %>
