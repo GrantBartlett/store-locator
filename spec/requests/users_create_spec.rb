@@ -1,9 +1,9 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe "user#create", type: :request do
+RSpec.describe 'user#create', type: :request do
 
-  context 'new user' do
-    it 'should succeed with valid parameters' do
+  context 'when guest' do
+    it 'should create' do
       post '/users', :user => { :name => 'example', :email => 'example@example.com', :password => 'password', :password_confirmation => 'password' }
       follow_redirect!
       expect(response).to render_template(:show)

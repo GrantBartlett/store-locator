@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "session#create", type: :request do
+RSpec.describe 'session#create', type: :request do
   let(:user) { create(:user, password: 'password') }
 
-  context 'signing in' do
+  context 'when logging in' do
     it 'should create new session' do
       post '/login', session: { email: user.email, password: 'password'}
       redirect_to user

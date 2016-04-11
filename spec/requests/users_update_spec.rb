@@ -1,15 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "user#update", type: :request do
+RSpec.describe 'user#update', type: :request do
   let(:user) { create(:user, password: 'password') }
 
-  context 'when user updates profile' do
-    it 'should return 200 for edit_user_path' do
-      get edit_user_path(user)
-      expect(response).to have_http_status(:success)
-    end
-
-    it "should save" do
+  context 'when user' do
+    it 'should update' do
       patch user_path(user), :user =>
       {
         :name => Faker::Name.name,
@@ -21,10 +16,10 @@ RSpec.describe "user#update", type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    it "should reject missing fields" do
+    it 'should fail with invalid parameters' do
       patch user_path(user), :user =>
       {
-        :name => "",
+        :name => '',
         :email => user.email,
         :password => 'password',
         :password_confirmation => 'password'

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "brand#destroy", type: :request do
+RSpec.describe 'brand#destroy', type: :request do
   let(:brand) { create(:brand) }
   let(:user) { create(:user, password: 'password') }
   let(:admin) { create(:admin, password: 'password') }

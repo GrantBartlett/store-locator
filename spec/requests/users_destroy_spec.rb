@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "user#destroy", type: :request do
+RSpec.describe 'user#destroy', type: :request do
   let(:user) { create(:user, password: 'password') }
   let(:admin) { create(:admin, password: 'password') }
 
