@@ -34,4 +34,7 @@ example_id                                            | status  | run_time      
 ./spec/requests/brands_destroy_spec.rb[1:1:1]         | passed  | 0.43432 seconds |
 ./spec/requests/brands_destroy_spec.rb[1:2:1]         | passed  | 0.01901 seconds |
 ./spec/requests/brands_destroy_spec.rb[1:3:1]         | passed  | 0.0607 seconds  |
+./spec/requests/brands_update.spec.rb[1:1:1]          | passed  | 0.47772 seconds |
+./spec/requests/brands_update.spec.rb[1:1:2]          | passed  | 0.0208 seconds  |
+./spec/requests/brands_update.spec.rb[1:1:3]          | passed  | 0.01854 seconds |
 ./spec/views/users/create.html.erb_spec.rb[1:1]       | pending | 0.00002 seconds |

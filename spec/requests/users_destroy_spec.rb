@@ -20,4 +20,11 @@ RSpec.describe "user#destroy", type: :request do
       expect(response).to have_http_status(401)
     end
   end
+
+  context 'when guest' do
+    it 'should not destroy' do
+      delete user_path :destroy, :id => user
+      expect(response).to have_http_status(401)
+    end
+  end
 end
