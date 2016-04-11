@@ -13,7 +13,9 @@
       <div class="avatar small"><%= gravatar_for current_user %></div>
     </a>
     <ul class="dropdown-menu">
-      <li><%= link_to "Profile", edit_user_path(current_user) %></li>
+      <li><%= link_to "Profile", user_path(current_user) %></li>
+      <li><%= link_to "Brands", brands_path %></li>
+      <li><%= link_to "Users", users_path %></li>
       <li role="separator" class="divider"></li>
       <li><%= link_to "Log out", logout_path, method: :delete %></li>
     </ul>

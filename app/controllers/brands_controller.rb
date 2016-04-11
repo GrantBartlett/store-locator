@@ -7,7 +7,7 @@ class BrandsController < ApplicationController
 
   def create
     if is_admin?
-      @brand = Brand.new(brand_params)
+      @brand = current_user.brands.new(brand_params)
       if @brand.save
         redirect_to @brand
       else

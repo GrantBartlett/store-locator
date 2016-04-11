@@ -2,3 +2,8 @@
   <%= @user.name %>
   <%= gravatar_for @user %>
 </h1>
+
+<hr>
+<%= link_to "Edit", edit_user_path(@user) %>
+<%= link_to "Remove", @user, method: :delete, data: { confirm: "Are you sure?" } %>
+<hr>
