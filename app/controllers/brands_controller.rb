@@ -61,6 +61,4 @@ class BrandsController < ApplicationController
   def brand_params
     params.require(:brand).permit(:title, :logo, :url, :description, :published)
   end
-
-  after_action :verify_authorized, only: [:edit, :update, :destroy]
 end
