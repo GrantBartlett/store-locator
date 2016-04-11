@@ -1,14 +1,12 @@
 require "rails_helper"
 
 RSpec.describe "user#create", type: :request do
-  let(:user) { create(:user, password: 'password') }
 
-  context 'signing up' do
+  context 'sign up' do
     it 'should create new user' do
-      post "/users", :user => { name: user.name, email: user.email, password: user.password}
+      post '/users', :user => { :name => 'example', :email => 'example@example.com', :password => 'password', :password_confirmation => 'password' }
       follow_redirect!
       expect(response).to render_template(:show)
-      # todo: fix 
     end
 
     it 'should reject invalid parameters' do
