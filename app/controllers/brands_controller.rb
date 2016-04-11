@@ -6,11 +6,15 @@ class BrandsController < ApplicationController
   end
 
   def create
-    @brand = Brand.new(brand_params)
-    if @brand.save
-      redirect_to @brand
+    if is_admin?
+      @brand = Brand.new(brand_params)
+      if @brand.save
+        redirect_to @brand
+      else
+        render 'new'
+      end
     else
-      render 'new'
+      head 401
     end
   end
 
