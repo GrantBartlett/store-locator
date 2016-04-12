@@ -7,18 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <%= render partial: 'shared/primary_navigation' %>
     </div>
   </nav>
-
   <main>
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <%= yield %>
+          <%= debug(params) if Rails.env.development? %>
+        </div>
+      </div>
+    </div>
   </main>
-
-  <%= debug(params) if Rails.env.development? %>
+  <%= yield :footer_third_party %>
 </body>
 </html>
