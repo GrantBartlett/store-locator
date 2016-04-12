@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :brands
   resources :users
+  resources :brand_locations
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
