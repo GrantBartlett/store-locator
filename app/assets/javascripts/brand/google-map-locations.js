@@ -23,7 +23,7 @@ function fetchLocations(){
       $.ajax({
         type: "GET",
         dataType: "json",
-        url: current_url + "/brand_locations",
+        url: current_url + "/locations",
         success: function(data){
           locations = data;
           dropMarkers();

@@ -5,5 +5,5 @@ class Brand < ActiveRecord::Base
   validates :url, presence: true
 
   belongs_to :user
-  has_many :brand_locations
+  has_many :locations
 end

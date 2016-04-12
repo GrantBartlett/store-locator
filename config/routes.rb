@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+  get 'locations/index'
 
   root 'home#index'
-  resources :brands
-  resources :users
-  resources :brand_locations
 
+  resources :users
+
+  resources :brands do
+    resources :locations
+  end
+
+  get   'sessions/new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'

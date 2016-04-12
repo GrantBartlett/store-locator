@@ -11,20 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317123741) do
-
-  create_table "brand_locations", force: :cascade do |t|
-    t.string   "name"
-    t.string   "lat"
-    t.string   "lng"
-    t.string   "content"
-    t.string   "url"
-    t.integer  "brand_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "brand_locations", ["brand_id"], name: "index_brand_locations_on_brand_id"
+ActiveRecord::Schema.define(version: 20160412150118) do
 
   create_table "brands", force: :cascade do |t|
     t.integer  "user_id"
@@ -38,6 +25,19 @@ ActiveRecord::Schema.define(version: 20160317123741) do
   end
 
   add_index "brands", ["user_id"], name: "index_brands_on_user_id"
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "lat"
+    t.string   "lng"
+    t.string   "content"
+    t.string   "url"
+    t.integer  "brand_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "locations", ["brand_id"], name: "index_locations_on_brand_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
