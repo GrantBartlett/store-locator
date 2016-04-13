@@ -11,13 +11,15 @@ class LocationsController < ApplicationController
     if is_admin?
       respond_to do |f|
         if @brand.save
-          f.html { redirect_to @brand }
+          f.html { redirect_to @brand, status: :created }
           f.json { render :show, status: :created, location: @brand }
         else
-          f.html { render :new }
+          f.html { redirect_to @brand, status: :unprocessable_entity }
           f.json { render json: @brand.errors, status: :unprocessable_entity }
         end
       end
+    else
+      head 401
     end
   end
 
