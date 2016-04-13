@@ -34,10 +34,10 @@ example_id                                             | status  | run_time     
 ./spec/requests/brands_update.spec.rb[1:1:3]           | passed  | 0.03184 seconds |
 ./spec/requests/brands_update.spec.rb[1:2:1]           | passed  | 0.50951 seconds |
 ./spec/requests/brands_update.spec.rb[1:3:1]           | passed  | 0.01488 seconds |
-./spec/requests/locations_create.spec.rb[1:1:1]        | passed  | 0.09916 seconds |
-./spec/requests/locations_create.spec.rb[1:1:2]        | passed  | 0.02939 seconds |
-./spec/requests/locations_create.spec.rb[1:2:1]        | passed  | 0.03212 seconds |
-./spec/requests/locations_create.spec.rb[1:3:1]        | passed  | 0.17074 seconds |
+./spec/requests/locations_create.spec.rb[1:1:1]        | passed  | 0.0246 seconds  |
+./spec/requests/locations_create.spec.rb[1:1:2]        | passed  | 0.13529 seconds |
+./spec/requests/locations_create.spec.rb[1:2:1]        | passed  | 0.02458 seconds |
+./spec/requests/locations_create.spec.rb[1:3:1]        | passed  | 0.01241 seconds |
 ./spec/requests/session_create_spec.rb[1:1:1]          | passed  | 0.01894 seconds |
 ./spec/requests/session_create_spec.rb[1:1:2]          | passed  | 0.01045 seconds |
 ./spec/requests/users_create_spec.rb[1:1:1]            | passed  | 0.01721 seconds |

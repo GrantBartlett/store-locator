@@ -7,8 +7,8 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = @brand.locations.new(location_params)
     if is_admin?
+      @location = @brand.locations.new(location_params)
       respond_to do |f|
         if @brand.save
           f.html { redirect_to @brand, status: :created }
@@ -24,7 +24,23 @@ class LocationsController < ApplicationController
   end
 
   def destroy
-    # todo
+    if is_admin?
+      @location = @brand.locations.find(params[:id])
+      if @location.destroy
+        respond_to do |f|
+          if @location.save
+            f.html { redirect_to @brand, status: :ok }
+            f.json { render :show, status: :ok, location: @brand }
+          else
+            f.html { redirect_to @brand, status: :bad_request }
+            f.json { render json: @brand.errors, status: :bad_request }
+          end
+        end
+      else
+      end
+    else
+      head 401
+    end
   end
 
 
