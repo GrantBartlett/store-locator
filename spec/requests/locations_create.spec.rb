@@ -18,7 +18,8 @@ RSpec.describe 'location#create', type: :request do
         :content => location.content,
         :url => location.url
       }
-      expect(response).to have_http_status(:created)
+      follow_redirect!
+      expect(response).to render_template(:show)
     end
 
     it 'should reject invalid parameters' do
@@ -31,7 +32,7 @@ RSpec.describe 'location#create', type: :request do
         :content => location.content,
         :url_wrong => location.url
       }
-      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response).to have_http_status(:bad_request)
     end
   end
 
@@ -46,7 +47,7 @@ RSpec.describe 'location#create', type: :request do
         :content => location.content,
         :url => location.url
       }
-      expect(response).to have_http_status(401)
+      expect(response).to have_http_status(:unauthorized)
     end
   end
 
@@ -60,7 +61,7 @@ RSpec.describe 'location#create', type: :request do
         :content => location.content,
         :url => location.url
       }
-      expect(response).to have_http_status(401)
+      expect(response).to have_http_status(:unauthorized)
     end
   end
 end

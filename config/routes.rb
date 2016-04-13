@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'locations/index'
-
   root 'home#index'
 
   resources :users
-
   resources :brands do
     resources :locations
   end

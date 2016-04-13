@@ -7,26 +7,30 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = @brand.locations.new(location_params)
     if is_admin?
-      respond_to do |f|
-        if @brand.save
-          f.html { redirect_to @brand, status: :created }
-          f.json { render :show, status: :created, location: @brand }
-        else
-          f.html { redirect_to @brand, status: :unprocessable_entity }
-          f.json { render json: @brand.errors, status: :unprocessable_entity }
-        end
+      @location = @brand.locations.new(location_params)
+      if @brand.save
+        redirect_to @brand
+      else
+        head :bad_request
       end
     else
-      head 401
+      head :unauthorized
     end
   end
 
   def destroy
-    # todo
+    if is_admin?
+      @location = @brand.locations.find(params[:id])
+      if @location.destroy
+        redirect_to @brand
+      else
+        head :bad_request
+      end
+    else
+      head :unauthorized
+    end
   end
-
 
   private
   def set_brand

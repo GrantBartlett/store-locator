@@ -5,7 +5,7 @@ Title: <%= brand.title %>
 Logo: <%= brand.logo %> <br>
 Url: <%= brand.url %> <br>
 Description: <%= brand.description %> <br>
-Brand created by: <%= link_to user_name(brand.user_id), user_path(brand.user_id) %>
+Brand created by: <%= link_to current_user.name, user_path(brand.user_id) %>
 
 <hr>
 

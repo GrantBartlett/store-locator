@@ -1,0 +1,21 @@
+<div class="well">
+  <ul class="list-unstyled">
+    <li>
+      Location - <%= location.name %>
+    </li>
+    <li>
+      Lat - <%= location.lat %>
+    </li>
+    <li>
+      Lng - <%= location.lng %>
+    </li>
+    <li>
+      Content - <%= location.content %>
+    </li>
+    <li>
+      Url - <%= location.url %>
+    </li>
+  </ul>
+  <button class="btn btn-info" onclick="openInfoWindow(<%= location_counter %>);">Open <%= location.name %></button>
+  <%= link_to 'X', brand_location_path(@brand, location.id),  class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
