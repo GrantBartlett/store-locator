@@ -6,10 +6,13 @@ class LocationsController < ApplicationController
     render json: @locations
   end
 
+  def show
+  end
+
   def create
     if is_admin?
       @location = @brand.locations.new(location_params)
-      if @brand.save
+      if @location.save
         redirect_to @brand
       else
         head :bad_request
@@ -19,16 +22,13 @@ class LocationsController < ApplicationController
     end
   end
 
+  def update
+  end
+
   def destroy
-    if is_admin?
-      @location = @brand.locations.find(params[:id])
-      if @location.destroy
-        redirect_to @brand
-      else
-        head :bad_request
-      end
-    else
-      head :unauthorized
+    @brand_location = @brand.locations.find(params[:id])
+    if @brand_location.destroy
+      redirect_to @brand
     end
   end
 

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "users/show", type: :view do
+RSpec.describe "brands/show", type: :view do
   before(:each) do
-    @user = assign(:user, User.create!())
+    @brand = assign(:brand, Brand.create!())
   end
 
   it "renders attributes in <p>" do

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "users/show", type: :view do
+RSpec.describe "locations/show", type: :view do
   before(:each) do
-    @user = assign(:user, User.create!())
+    @location = assign(:location, Location.create!())
   end
 
   it "renders attributes in <p>" do
