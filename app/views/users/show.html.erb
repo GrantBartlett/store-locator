@@ -1,9 +1,15 @@
-<h1>
-  <%= @user.name %>
-  <%= gravatar_for @user %>
-</h1>
-
-<hr>
-<%= link_to "Edit", edit_user_path(@user) %>
-<%= link_to "Remove", @user, method: :delete, data: { confirm: "Are you sure?" } %>
-<hr>
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <%= gravatar_for @user %>
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= @user.name %></h4>
+    <p>
+      <%= @user.email %>
+    </p>
+    <%= link_to "Edit", edit_user_path(@user) %>
+    <%= link_to "Remove", @user, method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+</div>

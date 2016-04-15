@@ -1,21 +1,28 @@
-<h1>Brands</h1>
+<div class="row">
+  <div class="col-md-12">
+    <h1>Brands</h1>
+    
+    <% @brands.each do |brand| %>
+    <div class="media">
+      <div class="media-left">
+        <a href="<%= brand.url %>">
+          <!-- <img src="<%= brand.logo %>" style="width:50%"> -->
+        </a>
+      </div>
 
-<% @brands.each do |brand| %>
-Title: <%= brand.title %>
-Logo: <%= brand.logo %> <br>
-Url: <%= brand.url %> <br>
-Description: <%= brand.description %> <br>
-Brand created by: <%= link_to user_name(brand.user_id), user_path(brand.user_id) %>
+      <div class="media-body">
+        <h4 class="media-heading"><%= brand.title %></h4>
+        <p><%= brand.description %></p>
+        <p><%= link_to user_name(brand.user_id), user_path(brand.user_id) %></p>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <%= link_to "Show", brand, :class => "btn btn-default" %>
+          <%= link_to "Edit", edit_brand_path(brand), :class => "btn btn-default"  %>
+          <%= link_to "Remove", brand, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-default"  %>
+        </div>
+      </div>
+    </div>
+    <% end %>
 
-<hr>
-
-<div class="btn-group" role="group" aria-label="Basic example">
-<%= link_to "Show", brand, :class => "btn btn-default" %>
-<%= link_to "Edit", edit_brand_path(brand), :class => "btn btn-default"  %>
-<%= link_to "Remove", brand, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-default"  %>
+    <%= link_to "Create New Brand", new_brand_path, :class => "btn btn-success" %>
+  </div>
 </div>
-
-<hr>
-<% end %>
-
-<%= link_to "Create New Brand", new_brand_path, :class => "btn btn-success" %>
