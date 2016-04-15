@@ -10,7 +10,11 @@ class ApplicationController < ActionController::Base
   private
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user == @user
+    if !is_admin?
+      unless current_user == @user
+        redirect_to(root_url)
+      end
+    end
   end
 
   def require_admin

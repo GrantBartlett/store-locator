@@ -1,7 +1,6 @@
 class BrandsController < ApplicationController
   skip_before_action :require_user, only: [:show]
   skip_before_action :require_admin, only: [:show]
-  # before_action :correct_user
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -18,8 +17,7 @@ class BrandsController < ApplicationController
   end
 
   def update
-    @brand = Brand.find(params[:id])
-    if @brand.update_attributes(brand_params) && is_admin?
+    if @brand.update_attributes(brand_params)
       redirect_to @brand
     else
       render 'edit'
@@ -27,7 +25,6 @@ class BrandsController < ApplicationController
   end
 
   def destroy
-    @brand = Brand.find(params[:id])
     if @brand.destroy
       @brand.destroy
       redirect_to brands_path
@@ -35,7 +32,6 @@ class BrandsController < ApplicationController
   end
 
   def show
-    @brand = Brand.find(params[:id])
   end
 
   def new
@@ -43,13 +39,12 @@ class BrandsController < ApplicationController
   end
 
   def edit
-    @brand = Brand.find(params[:id])
   end
 
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_brand
-    @brand = Brand.find(params[:id])
+    @brand = Brand.find Brand.decrypt(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

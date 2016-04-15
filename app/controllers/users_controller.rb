@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
+  before_action :correct_user, only: [:show, :edit, :update, :destroy] # Restrict viewing, editing, and destroying other users
   skip_before_action :require_user, only: [:new, :create, :edit] # Restrict everything but the following
   skip_before_action :require_admin, only: [:show, :new, :create, :edit, :update] # Restrict everything but the following
-  before_action :correct_user, only: [:show, :edit, :update, :destroy] # Restrict viewing, editing, and destroying other users
 
   def index
     @users = User.all
