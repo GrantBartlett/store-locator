@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_user, only: [:new, :create]
+  skip_before_action :require_admin, only: [:new, :create, :destroy]
+
   def new
   end
 
@@ -8,13 +11,12 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to user
     else
-      # Create an error message.
       render 'new'
     end
   end
 
   def destroy
     log_out
-    redirect_to root_url
+    redirect_to users_path
   end
 end

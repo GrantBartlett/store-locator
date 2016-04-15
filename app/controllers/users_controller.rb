@@ -1,6 +1,18 @@
 class UsersController < ApplicationController
+  skip_before_action :require_user, only: [:new, :create, :edit]
+  skip_before_action :require_admin, only: [:show, :new, :edit, :update]
+  before_action :correct_user
+
   def index
     @users = User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def new
+    @user = User.new
   end
 
   def create
@@ -11,6 +23,10 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -30,21 +46,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
-
-  def new
-    @user = User.new
-  end
-
-  def edit
-    @user = User.find(params[:id])
-  end
-
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-
 end
