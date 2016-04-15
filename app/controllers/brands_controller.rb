@@ -6,40 +6,28 @@ class BrandsController < ApplicationController
   end
 
   def create
-    if is_admin?
-      @brand = current_user.brands.new(brand_params)
-      if @brand.save
-        redirect_to @brand
-      else
-        render 'new'
-      end
+    @brand = current_user.brands.new(brand_params)
+    if @brand.save
+      redirect_to @brand
     else
-      head 401
+      render 'new'
     end
   end
 
   def update
     @brand = Brand.find(params[:id])
-    if is_admin?
-      if @brand.update_attributes(brand_params) && is_admin?
-        redirect_to @brand
-      else
-        render 'edit'
-      end
-    else
+    if @brand.update_attributes(brand_params) && is_admin?
       redirect_to @brand
+    else
+      render 'edit'
     end
   end
 
   def destroy
-    if is_admin?
-      @brand = Brand.find(params[:id])
-      if @brand.destroy
-        @brand.destroy
-        redirect_to brands_path
-      end
-    else
-      head 401
+    @brand = Brand.find(params[:id])
+    if @brand.destroy
+      @brand.destroy
+      redirect_to brands_path
     end
   end
 

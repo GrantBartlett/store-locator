@@ -24,11 +24,23 @@ RSpec.describe BrandsController, type: :controller do
   # Brand. As you add validations to Brand, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      title: "Brand Title",
+      logo: "http://example.com/logo.png",
+      url: "http://example.com",
+      description: "A great description about this Brand.",
+      published: false
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      title: "",
+      logo: "",
+      url: "",
+      description: "",
+      published: ""
+    }
   }
 
   # This should return the minimal set of values that should be in the session
