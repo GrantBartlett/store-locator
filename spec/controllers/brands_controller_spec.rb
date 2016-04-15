@@ -20,6 +20,8 @@ require 'rails_helper'
 
 RSpec.describe BrandsController, type: :controller do
 
+  let(:admin) {create(:admin, password: 'password')}
+
   # This should return the minimal set of attributes required to create a valid
   # Brand. As you add validations to Brand, be sure to
   # adjust the attributes here as well.
@@ -46,7 +48,7 @@ RSpec.describe BrandsController, type: :controller do
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # BrandsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) { { user_id: admin.id } }
 
   describe "GET #index" do
     it "assigns all brands as @brands" do
@@ -115,14 +117,21 @@ RSpec.describe BrandsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          title: "A new Brand Title",
+          logo: "http://example.com/logo.png",
+          url: "http://example.com",
+          description: "A great description about this Brand.",
+          published: true
+        }
       }
 
       it "updates the requested brand" do
         brand = Brand.create! valid_attributes
         put :update, {:id => brand.to_param, :brand => new_attributes}, valid_session
         brand.reload
-        skip("Add assertions for updated state")
+        expect(brand.title).to eq("A new Brand Title")
+        expect(brand.published).to eq(true)
       end
 
       it "assigns the requested brand as @brand" do
