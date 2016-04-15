@@ -1,8 +1,7 @@
 <%= form_for(@brand) do |f| %>
   <% if @brand.errors.any? %>
-  <div id="error_explanation">
+  <div>
     <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
-
     <ul>
       <% @brand.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -11,27 +10,27 @@
   </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :logo %><br>
-    <%= f.text_field :logo %>
+  <div class="form-group">
+    <%= f.label :logo %>
+    <%= f.text_field :logo, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.text_field :url, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :published %><br>
-    <%= f.check_box :published %>
+  <div class="form-group">
+    <%= f.label :published %>
+    <%= f.text_field :published, :class => "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit :class => 'btn btn-success' %>
   </div>
-  <% end %>
+<% end %>
