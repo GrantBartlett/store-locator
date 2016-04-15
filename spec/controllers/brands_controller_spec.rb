@@ -19,12 +19,12 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe BrandsController, type: :controller do
-
-  let(:admin) {create(:admin, password: 'password')}
-
   # This should return the minimal set of attributes required to create a valid
   # Brand. As you add validations to Brand, be sure to
   # adjust the attributes here as well.
+
+  let(:admin) {create(:admin, password: 'password')}
+
   let(:valid_attributes) {
     {
       title: "Brand Title",
