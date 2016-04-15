@@ -6,6 +6,10 @@ class LocationsController < ApplicationController
     render json: @locations
   end
 
+  def new
+    @location = Location.new
+  end
+
   def create
     if is_admin?
       @location = @brand.locations.new(location_params)

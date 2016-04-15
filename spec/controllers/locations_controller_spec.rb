@@ -24,11 +24,23 @@ RSpec.describe LocationsController, type: :controller do
   # Location. As you add validations to Location, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      name: "The location",
+      lat: "00000000",
+      lng: "-00000000",
+      content: "The content for this location",
+      url: "http://example.com"
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      name: "",
+      lat: "",
+      lng: "",
+      content: "",
+      url: ""
+    }
   }
 
   # This should return the minimal set of values that should be in the session
