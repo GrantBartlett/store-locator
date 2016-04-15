@@ -23,14 +23,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    if is_admin?
-      @user = User.find(params[:id])
-      if @user.destroy
-        @user.destroy
-        redirect_to users_path
-      end
-    else
-      head 401
+    @user = User.find(params[:id])
+    if @user.destroy
+      @user.destroy
+      redirect_to users_path
     end
   end
 

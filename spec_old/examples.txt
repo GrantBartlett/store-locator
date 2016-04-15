@@ -1,7 +1,7 @@
 example_id                                             | status  | run_time        |
 ------------------------------------------------------ | ------- | --------------- |
-./spec/controllers/brands_controller_spec.rb[1:1:1]    | passed  | 0.00376 seconds |
-./spec/controllers/brands_controller_spec.rb[1:2:1]    | passed  | 0.02016 seconds |
+./spec/controllers/brands_controller_spec.rb[1:1:1]    | passed  | 0.00508 seconds |
+./spec/controllers/brands_controller_spec.rb[1:2:1]    | passed  | 0.03384 seconds |
 ./spec/controllers/home_controller_spec.rb[1:1:1]      | passed  | 0.00629 seconds |
 ./spec/controllers/locations_controller_spec.rb[1:1:1] | failed  | 0.07718 seconds |
 ./spec/controllers/sessions_controller_spec.rb[1:1:1]  | passed  | 0.01362 seconds |

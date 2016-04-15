@@ -1,5 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "locations/index.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe "locations/index", type: :view do
+  before(:each) do
+    assign(:locations, [
+      Location.create!(),
+      Location.create!()
+    ])
+  end
+
+  it "renders a list of locations" do
+    render
+  end
 end
