@@ -23,7 +23,7 @@ RSpec.describe UsersController, type: :controller do
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
 
-  let(:user) {create(:user, password: 'password')}
+  let(:admin) {create(:admin, password: 'password')}
 
   let(:valid_attributes) {
     {
@@ -46,13 +46,13 @@ RSpec.describe UsersController, type: :controller do
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # UsersController. Be sure to keep this updated too.
-  let(:valid_session) { { user_id: nil } }
+  let(:valid_session) { { user_id: admin.id } }
 
   describe "GET #index" do
     it "assigns all users as @users" do
       user = User.create! valid_attributes
       get :index, {}, valid_session
-      expect(assigns(:users)).to eq([user])
+      expect(assigns(:users)).to eq([user] + [admin])
     end
   end
 
@@ -82,6 +82,7 @@ RSpec.describe UsersController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new User" do
+        valid_session { {user_id: nil} }
         expect {
           post :create, {:user => valid_attributes}, valid_session
         }.to change(User, :count).by(1)
@@ -160,6 +161,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested user" do
+      valid_session { {user_id: nil} }
       user = User.create! valid_attributes
       expect {
         delete :destroy, {:id => user.to_param}, valid_session
