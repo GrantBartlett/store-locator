@@ -4,7 +4,7 @@ RSpec.describe LocationsController, type: :routing do
   describe "routing" do
 
     it "routes to #index" do
-      expect(:get => "/locations").to route_to("locations#index")
+      expect(:get => "/brands/1/locations").to route_to("locations#index")
     end
 
     it "routes to #new" do

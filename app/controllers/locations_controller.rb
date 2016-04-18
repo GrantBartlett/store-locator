@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   before_action :set_brand
 
   def index
-    @locations = @brand.locations
+    @locations = @brand.locations.all
     render json: @locations
   end
 

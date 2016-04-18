@@ -9,8 +9,8 @@ module SessionsHelper
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
-  def user_name(user_id)
-    return_user ||= User.find_by(id: user_id).name
+  def user_name(user)
+    User.find_by(id: user)
   end
 
   # Returns true if the current user is admin
