@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
-  skip_before_action :require_user, only: [:show]
-  skip_before_action :require_admin, only: [:show]
+  skip_before_action :require_user, only: [:index, :create, :update, :show, :new, :edit, :destroy]
+  skip_before_action :require_admin, only: [:index, :create, :update, :show, :new, :edit, :destroy]
   before_action :set_brand
 
   def index
