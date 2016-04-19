@@ -18,6 +18,7 @@ class LocationsController < ApplicationController
   end
 
   def update
+    @location = Location.find(params[:id])
     if @location.update_attributes(location_params)
       redirect_to @brand
     else
@@ -34,6 +35,7 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @location = Location.find(params[:id])
   end
 
   def new
@@ -41,6 +43,7 @@ class LocationsController < ApplicationController
   end
 
   def edit
+    @location = Location.find(params[:id])
   end
 
   private
