@@ -5,7 +5,7 @@ class LocationsController < ApplicationController
 
   def index
     @locations = @brand.locations.all
-    render json: @locations
+    # render json: @locations
   end
 
   def create
