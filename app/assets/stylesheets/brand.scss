@@ -1,3 +1,45 @@
 // Place all the styles related to the Brand controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#map {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+// Brand navigation
+.brand-nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+// Location
+.location-info-box {
+  @extend .well;
+  background: none;
+  border: none;
+  border-top: 1px solid #EFEFEF;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 5px;
+  padding: 19px 0;
+  color: #494949;
+  p {
+    color: #949494
+  }
+}
+
+
+.btn-dark {
+  background: #231f20;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  &:hover, &:active, &:focus {
+    background: lighten(#231f20, 15%);
+    color: whitesmoke;
+  }
+}

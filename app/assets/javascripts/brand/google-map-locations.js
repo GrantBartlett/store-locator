@@ -5,6 +5,7 @@
 var locations = [];
 var markers = [];
 var map;
+var infowindow;
 
 // Init Google Maps
 function initMap() {
@@ -13,6 +14,7 @@ function initMap() {
     center: {lat: 52.520, lng: 13.410}
   });
   fetchLocations();
+  infowindow = new google.maps.InfoWindow({'maxWidth': 300});
 }
 
 // Fetch location data
@@ -41,9 +43,9 @@ function dropMarkers() {
   }
 }
 
+
 // Adding markers with delay
 function addMarkerWithTimeout(position, timeout) {
-  var infowindow = new google.maps.InfoWindow();
 
   window.setTimeout(function() {
     var lat = parseFloat(position.lat),
@@ -57,13 +59,17 @@ function addMarkerWithTimeout(position, timeout) {
       animation: google.maps.Animation.DROP
     });
 
+    var contentTitle = '<h4 class="infowindow-title">'+ position.name +'</h4>';
+    var contentBody = '<div class="infowindow-body">'+ position.content +'</div>';
+    var infoWindowContent = contentTitle += contentBody;
+
     google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(position.content);
+      infowindow.setContent(infoWindowContent);
+      infowindow.maxWidth = 200;
       infowindow.open(map, marker);
     });
 
     markers.push(marker);
-
   }, timeout);
 }
 

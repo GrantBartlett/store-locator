@@ -1,11 +1,11 @@
 class LocationsController < ApplicationController
-  skip_before_action :require_user, only: [:index, :create, :update, :show, :new, :edit, :destroy]
-  skip_before_action :require_admin, only: [:index, :create, :update, :show, :new, :edit, :destroy]
+  skip_before_action :require_user, only: [:index, :show]
+  skip_before_action :require_admin, only: [:index, :show]
   before_action :set_brand
 
   def index
     @locations = @brand.locations.all
-    # render json: @locations
+    render json: @locations
   end
 
   def create

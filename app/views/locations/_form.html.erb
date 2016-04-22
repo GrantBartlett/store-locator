@@ -1,25 +1,27 @@
-<%= form_for [@brand, @brand.locations.build] do |f| %>
-<div class="form-group">
-  <%= f.label :name %><br>
-  <%= f.text_field :name , class: "form-control" %>
-</div>
+<% if logged_in? %>
+  <%= form_for [@brand, @brand.locations.build] do |f| %>
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name , class: "form-control" %>
+  </div>
 
-<div class="form-group">
-  <%= f.label :lat %><br>
-  <%= f.text_field :lat, class: "form-control" %>
-</div>
+  <div class="form-group">
+    <%= f.label :lat %><br>
+    <%= f.text_field :lat, class: "form-control" %>
+  </div>
 
-<div class="form-group">
-  <%= f.label :lng %><br>
-  <%= f.text_field :lng, class: "form-control" %>
-</div>
+  <div class="form-group">
+    <%= f.label :lng %><br>
+    <%= f.text_field :lng, class: "form-control" %>
+  </div>
 
-<div class="form-group">
-  <%= f.label :content %><br>
-  <%= f.text_field :content, class: "form-control" %>
-</div>
+  <div class="form-group">
+    <%= f.label :content %><br>
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
 
-<div class="form-group">
-  <%= f.submit class: "btn btn-default" %>
-</div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-default" %>
+  </div>
+  <% end %>
 <% end %>
