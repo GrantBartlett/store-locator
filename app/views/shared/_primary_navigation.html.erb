@@ -1,24 +1,43 @@
 <nav class="navbar navbar-default brand-nav">
   <div class="container">
-    <%= yield :brand_logo %>
+    <% if yield(:brand_logo).empty? %>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <%= image_tag 'brand-smswmedia.png', :class => 'brand-logo' %>
+      </a>
+    </div>
+    <% else %>
+    <%= yield(:brand_logo) %>
+    <% end %>
 
     <% if logged_in? %>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="/">Home</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <%= current_user.name %> <span class="caret"></span>
-          <div class="avatar small"><%= gravatar_for current_user %></div>
-        </a>
-        <ul class="dropdown-menu">
-          <li><%= link_to "Profile", user_path(current_user) %></li>
-          <li><%= link_to "Brands", brands_path %></li>
-          <li><%= link_to "Users", users_path %></li>
-          <li role="separator" class="divider"></li>
-          <li><%= link_to "Log out", logout_path, method: :delete %></li>
-        </ul>
+      <li>
+        <div class="hamburger-menu" data-menu="js_menu">
+          <div class="bar"></div>
+        </div>
       </li>
     </ul>
     <% end %>
   </div>
 </nav>
+
+<% if logged_in? %>
+<div class="js_menu menu-popup hidden">
+  <div class="menu-container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <ul class="list-unstyled">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Profile", user_path(current_user) %></li>
+          <li><%= link_to "Brands", brands_path %></li>
+          <li><%= link_to "Users", users_path %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>

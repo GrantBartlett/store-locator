@@ -9,6 +9,8 @@ module NavigationHelper
   def current_class
     if !@brand.nil?
       @current_class ||= @brand.title
+    else
+      @current_class ||= "smswmedia"
     end
   end
 end

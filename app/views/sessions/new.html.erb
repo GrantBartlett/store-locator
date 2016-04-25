@@ -1,13 +1,7 @@
-<h1>Login</h1>
-<%= form_for(:session, url: login_path) do |f| %>
-
-<%= f.label :email %>
-<%= f.email_field :email, class: 'form-control' %>
-
-<%= f.label :password %>
-<%= f.password_field :password, class: 'form-control' %>
-
-<%= f.submit "Log in", class: "btn btn-primary" %>
-<% end %>
-
-<p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+<div class="row">
+  <div class="col-md-5 col-md-push-2">
+    <h1>Please <strong>sign in</strong> to continue</h1>
+    <%= render 'form' %>
+    <p>No account? <%= link_to "Sign up here.", new_user_path %></p>
+  </div>
+</div>

@@ -1,12 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-@import "brand";
-@import "brands/aldo";
-@import "brands/clarks";
-
-@import "home";
-@import "sessions";
-@import "users";
-@import "profile";
-@import "locations";
+@import "core"; // Core application styles when not viewing a brand
+@import "brand"; // Contains standard brand structure/styling, THEN individudal brand styling.
+@import "profile"; // User profile
+@import "menu";

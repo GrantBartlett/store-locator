@@ -1,0 +1,69 @@
+$brand-grey : #464646;
+
+// Override default font, styles
+html,body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+  padding-bottom: 10px;
+  font-weight: 300;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+.btn {
+  border-radius: 3px;
+}
+
+.btn-lg {
+  padding: 10px 35px;
+  font-size: 15px;
+}
+
+.btn-primary {
+  background: $brand-grey;
+  border-color: $brand-grey;
+  &:hover, &:focus, &:active {
+    background-color: darken($brand-grey, 15%);
+  }
+}
+
+.dropdown-menu {
+  width: 100%;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+// SMSW Media - the core app when not on a brand page
+.brand-smswmedia {
+  background: url(background.jpg);
+  background-size: cover;
+
+  // Navbar container
+  .brand-nav {
+    background: transparent;
+    border: none;
+  }
+
+  .navbar-brand {
+    height: 45px;
+    width: 52px;
+    padding: 0;
+  }
+
+  // Navbar logo
+  .navbar {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  main {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
