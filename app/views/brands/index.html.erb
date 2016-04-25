@@ -4,12 +4,6 @@
 
     <% @brands.each do |brand| %>
     <div class="media">
-      <div class="media-left">
-        <a href="<%= brand.url %>">
-          <img src="<%= brand.logo %>" style="width:50%">
-        </a>
-      </div>
-
       <div class="media-body">
         <h4 class="media-heading"><%= brand.title %></h4>
         <p><%= brand.description %></p>

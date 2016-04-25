@@ -1,8 +1,8 @@
-<nav class="navbar navbar-default brand-nav">
-  <div class="container">
+<div class="container">
+  <nav class="navbar navbar-default brand-nav">
     <% if yield(:brand_logo).empty? %>
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="<%= root_path %>">
         <%= image_tag 'brand-smswmedia.png', :class => 'brand-logo' %>
       </a>
     </div>
@@ -13,26 +13,25 @@
     <% if logged_in? %>
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <div class="hamburger-menu" data-menu="js_menu">
+        <a class="hamburger-menu" href="#">
           <div class="bar"></div>
-        </div>
+        </a>
       </li>
     </ul>
     <% end %>
-  </div>
-</nav>
+  </nav>
+</div>
 
 <% if logged_in? %>
 <div class="js_menu menu-popup hidden">
-  <div class="menu-container">
+  <div class="menu-container text-center">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-12">
         <ul class="list-unstyled">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Profile", user_path(current_user) %></li>
           <li><%= link_to "Brands", brands_path %></li>
           <li><%= link_to "Users", users_path %></li>
-          <li role="separator" class="divider"></li>
           <li><%= link_to "Log out", logout_path, method: :delete %></li>
         </li>
       </ul>
