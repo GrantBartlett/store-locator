@@ -31,22 +31,20 @@ form {
   }
 }
 
-.dropdown-menu {
-  width: 100%;
-}
-
-.navbar-default .navbar-nav > li > a {
+.header {
+  background: url(header.jpg);
+  background-size: cover;
+  padding-top: 50px;
+  padding-bottom: 50px;
   color: white;
 }
 
 // SMSW Media - the core app when not on a brand page
 .brand-smswmedia {
-  background: url(background.jpg);
-  background-size: cover;
 
   // Navbar container
   .brand-nav {
-    background: transparent;
+    background: #fff;
     border: none;
   }
 
@@ -58,8 +56,8 @@ form {
 
   // Navbar logo
   .navbar {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 
   main {

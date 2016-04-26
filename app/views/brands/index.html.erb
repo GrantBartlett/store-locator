@@ -1,9 +1,12 @@
+<% content_for :header do %>
+  <h1>Brands</h1>
+<% end %>
+
 <div class="row">
   <div class="col-md-12">
-    <h1>Brands</h1>
 
     <% @brands.each do |brand| %>
-    <div class="media">
+    <div class="media form-group">
       <div class="media-body">
         <h4 class="media-heading"><%= brand.title %></h4>
         <p><%= brand.description %></p>
@@ -16,6 +19,8 @@
     </div>
     <% end %>
 
-    <%= link_to "Create New Brand", new_brand_path, :class => "btn btn-success" %>
+    <div class="form-group">
+      <%= link_to "Create New Brand", new_brand_path, :class => "btn btn-primary btn-lg" %>
+    </div>
   </div>
 </div>
