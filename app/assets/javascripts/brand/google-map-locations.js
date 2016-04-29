@@ -5,16 +5,17 @@
 var locations = [];
 var markers = [];
 var map;
+var bounds;
 var infowindow;
 
 // Init Google Maps
 function initMap() {
+  fetchLocations();
+  bounds = new google.maps.LatLngBounds();
+  infowindow = new google.maps.InfoWindow({'maxWidth': 300});
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
-    center: {lat: 52.520, lng: 13.410}
   });
-  fetchLocations();
-  infowindow = new google.maps.InfoWindow({'maxWidth': 300});
 }
 
 // Fetch location data
@@ -59,6 +60,8 @@ function addMarkerWithTimeout(position, timeout) {
       animation: google.maps.Animation.DROP
     });
 
+    bounds.extend(marker.position);
+
     var contentTitle = '<h4 class="infowindow-title">'+ position.name +'</h4>';
     var contentBody = '<div class="infowindow-body">'+ position.content +'</div>';
     var infoWindowContent = contentTitle += contentBody;
@@ -71,6 +74,13 @@ function addMarkerWithTimeout(position, timeout) {
 
     markers.push(marker);
   }, timeout);
+
+  map.fitBounds(bounds);
+
+  var listener = google.maps.event.addListener(map, "idle", function () {
+    map.setZoom(3);
+    google.maps.event.removeListener(listener);
+  });
 }
 
 // Remove markers
