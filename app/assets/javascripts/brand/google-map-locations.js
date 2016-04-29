@@ -78,7 +78,7 @@ function addMarkerWithTimeout(position, timeout) {
   map.fitBounds(bounds);
 
   var listener = google.maps.event.addListener(map, "idle", function () {
-    map.setZoom(3);
+    map.setZoom(10);
     google.maps.event.removeListener(listener);
   });
 }

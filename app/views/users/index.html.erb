@@ -3,10 +3,11 @@
 <% end %>
 
 <% @users.each do |user| %>
-  Name: <%= user.name %> <%= gravatar_for user %> <br>
-  Email: <%= user.email %> <br>
-  Admin: <%= user.admin? %> <br>
-
+  <div class="profile">
+    Name: <%= user.name %> <%= gravatar_for user %> <br>
+    Email: <%= user.email %> <br>
+    Admin: <%= user.admin? %> <br>
+  </div>
   <hr>
   <div class="btn-group" role="group" aria-label="Basic example">
     <%= link_to "Show", user, :class => "btn btn-default" %>
