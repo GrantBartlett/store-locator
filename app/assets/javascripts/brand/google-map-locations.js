@@ -49,9 +49,9 @@ function dropMarkers() {
 function addMarkerWithTimeout(position, timeout) {
 
   window.setTimeout(function() {
-    var lat = parseFloat(position.lat),
-    lng = parseFloat(position.lng),
-    pos = {lat, lng};
+    var lat = parseFloat(position.lat);
+    var lng = parseFloat(position.lng);
+    var pos = '';
 
     var marker = new google.maps.Marker({
       position: pos,
