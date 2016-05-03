@@ -8,14 +8,9 @@ var map;
 var bounds;
 var infowindow;
 
-// Init Google Maps
+// Maps api is loaded
 function initMap() {
   fetchLocations();
-  bounds = new google.maps.LatLngBounds();
-  infowindow = new google.maps.InfoWindow({'maxWidth': 300});
-  map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-  });
 }
 
 // Fetch location data
@@ -29,12 +24,23 @@ function fetchLocations(){
         url: current_url + "/locations",
         success: function(data){
           locations = data;
-          dropMarkers();
-          map.fitBounds(bounds);
+          initLocations(locations);
         }
       });
     }
   });
+}
+
+// Init google maps
+function initLocations(data){
+  bounds = new google.maps.LatLngBounds();
+  infowindow = new google.maps.InfoWindow({'maxWidth': 300});
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+  });
+
+  dropMarkers();
 }
 
 // Delay markers dropping
@@ -61,7 +67,7 @@ function addMarkerWithTimeout(position, timeout) {
       animation: google.maps.Animation.DROP
     });
 
-    bounds.extend(marker.position);
+
 
     var contentTitle = '<h4 class="infowindow-title">'+ position.name +'</h4>';
     var contentBody = '<div class="infowindow-body">'+ position.content +'</div>';
@@ -73,11 +79,11 @@ function addMarkerWithTimeout(position, timeout) {
       infowindow.open(map, marker);
     });
 
+    bounds.extend(marker.position);
     markers.push(marker);
   }, timeout);
 
   map.fitBounds(bounds);
-  console.log(bounds);
 
   var listener = google.maps.event.addListener(map, "idle", function () {
     map.setZoom(10);

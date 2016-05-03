@@ -11,3 +11,7 @@
     <%= render partial: 'brands/google_map' %>
   </div>
 </div>
+
+<% content_for :footer do %>
+  <%= javascript_include_tag '//maps.googleapis.com/maps/api/js?key=AIzaSyDkiHUkl-Syk3ZkNZYQcmLQZW3mNQZYj-Y&region=AR&v=3.23&callback=initMap' %>
+<% end %>
