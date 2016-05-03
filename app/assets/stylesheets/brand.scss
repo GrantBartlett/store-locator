@@ -11,6 +11,11 @@
   width: 100%;
 }
 
+.embed-map {
+  @extend .embed-responsive-16by9;
+  min-height: 600px;
+}
+
 // Brand navigation
 .brand-nav {
   padding-top: 20px;
