@@ -32,7 +32,7 @@ form {
 }
 
 .header {
-  background: url(header.jpg);
+  background: asset-data-url('header.jpg');
   background-size: cover;
   padding-top: 50px;
   padding-bottom: 50px;
