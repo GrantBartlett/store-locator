@@ -42,8 +42,8 @@ function dropMarkers() {
   for (var i = 0; i < locations.length; i++) {
     addMarkerWithTimeout(locations[i], i * 200);
   }
+  map.fitBounds(bounds);
 }
-
 
 // Adding markers with delay
 function addMarkerWithTimeout(position, timeout) {
