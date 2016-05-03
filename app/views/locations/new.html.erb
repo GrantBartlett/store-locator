@@ -1,2 +1,10 @@
+<% content_for :brand_logo do %>
+<div class="navbar-header">
+  <a class="navbar-brand" href="#">
+    <img alt="Brand" src='<%= @brand.logo %>' style="width: 120px;">
+  </a>
+</div>
+<% end %>
+
 <h2>New Location</h2>
 <%= render 'form' %>

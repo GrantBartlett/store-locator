@@ -1,7 +1,9 @@
 <%= render partial: 'brands/brand_logo' %>
 <div class="row">
   <div class="col-md-3">
-    <%= render partial: @brand.locations, collection: @brand.locations, locals: {i: 0} %>
+    <div class="map-locations">
+      <%= render partial: @brand.locations, collection: @brand.locations, locals: {i: 0} %>
+    </div>
     <%= render partial: 'locations/form' %>
   </div>
 

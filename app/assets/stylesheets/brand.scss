@@ -11,6 +11,11 @@
   width: 100%;
 }
 
+.map-locations {
+  height: 750px;
+  overflow-y: scroll;
+}
+
 .embed-map {
   @extend .embed-responsive-16by9;
   min-height: 600px;
