@@ -30,6 +30,7 @@ function fetchLocations(){
         success: function(data){
           locations = data;
           dropMarkers();
+          map.fitBounds(bounds);
         }
       });
     }
@@ -42,8 +43,8 @@ function dropMarkers() {
   for (var i = 0; i < locations.length; i++) {
     addMarkerWithTimeout(locations[i], i * 200);
   }
-  map.fitBounds(bounds);
 }
+
 
 // Adding markers with delay
 function addMarkerWithTimeout(position, timeout) {
@@ -76,6 +77,7 @@ function addMarkerWithTimeout(position, timeout) {
   }, timeout);
 
   map.fitBounds(bounds);
+  console.log(bounds);
 
   var listener = google.maps.event.addListener(map, "idle", function () {
     map.setZoom(10);
