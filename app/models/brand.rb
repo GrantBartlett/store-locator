@@ -7,7 +7,7 @@ class Brand < ActiveRecord::Base
   validates :url, presence: true
 
   belongs_to :user
-  has_many :locations
+  has_many :locations, dependent: :destroy
 
   def to_param
     encrypt id
