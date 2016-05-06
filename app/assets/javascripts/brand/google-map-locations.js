@@ -67,8 +67,6 @@ function addMarkerWithTimeout(position, timeout) {
       animation: google.maps.Animation.DROP
     });
 
-
-
     var contentTitle = '<h4 class="infowindow-title">'+ position.name +'</h4>';
     var contentBody = '<div class="infowindow-body">'+ position.content +'</div>';
     var infoWindowContent = contentTitle += contentBody;
@@ -78,7 +76,7 @@ function addMarkerWithTimeout(position, timeout) {
       infowindow.maxWidth = 200;
       infowindow.open(map, marker);
     });
-
+    
     bounds.extend(marker.position);
     markers.push(marker);
   }, timeout);
@@ -86,7 +84,7 @@ function addMarkerWithTimeout(position, timeout) {
   map.fitBounds(bounds);
 
   var listener = google.maps.event.addListener(map, "idle", function () {
-    map.setZoom(8);
+    map.setZoom(5);
     google.maps.event.removeListener(listener);
   });
 }

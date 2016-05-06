@@ -1,26 +1,40 @@
 <% content_for :header do %>
-  <h1>Brands</h1>
+<h1>Brands
+  <small>
+    <%= link_to "Create new?", new_brand_path %>
+  </small>
+</h1>
 <% end %>
 
 <div class="row">
   <div class="col-md-12">
-
     <% @brands.each do |brand| %>
     <div class="media form-group">
       <div class="media-body">
         <h4 class="media-heading"><%= brand.title %></h4>
         <p><%= brand.description %></p>
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <%= link_to "Show", brand, :class => "btn btn-default" %>
-          <%= link_to "Edit", edit_brand_path(brand), :class => "btn btn-default"  %>
-          <%= link_to "Remove", brand, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-default"  %>
+
+        <div class="btn-group" role="group" aria-label="Edit Brands">
+          <div class="btn-group">
+            <%= link_to brand, :class => "btn btn-default btn-primary btn-sm" do %>
+              <i class="material-icons">&#xE8F4;</i>
+            <% end %>
+
+            <%= link_to edit_brand_path(brand), :class => "btn btn-default btn-success btn-sm" do %>
+              <i class="material-icons">&#xE8B8;</i>
+            <% end %>
+
+            <%= link_to brand, method: :delete, data: { confirm: "Are you sure you wish to delete?" }, :class => "btn btn-default btn-danger btn-sm" do %>
+              <i class="material-icons">&#xE92B;</i>
+            <% end %>
+
+            <%= link_to brand, data: { confirm: "Are you sure you wish to turn off this store locator?" }, :class => "btn btn-default btn-success btn-sm" do %>
+              <i class="material-icons">&#xE8C6;</i>
+            <% end %>
+
+          </div>
         </div>
       </div>
-    </div>
     <% end %>
-
-    <div class="form-group">
-      <%= link_to "Create New Brand", new_brand_path, :class => "btn btn-primary btn-lg" %>
-    </div>
   </div>
 </div>

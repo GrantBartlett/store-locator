@@ -14,21 +14,8 @@ form {
   margin-bottom: 10px;
 }
 
-.btn {
-  border-radius: 3px;
-}
-
-.btn-lg {
-  padding: 10px 35px;
-  font-size: 15px;
-}
-
-.btn-primary {
-  background: $brand-grey;
-  border-color: $brand-grey;
-  &:hover, &:focus, &:active {
-    background-color: darken($brand-grey, 15%);
-  }
+.material-icons {
+  padding-top: 8px;
 }
 
 .header {
