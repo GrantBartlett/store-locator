@@ -3,6 +3,8 @@ module NavigationHelper
   def brand_class
     if !current_class.nil?
       "brand brand-" + current_class.downcase
+    else
+      "brand brand-smswmedia"
     end
   end
 
