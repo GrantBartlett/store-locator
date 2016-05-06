@@ -1,0 +1,10 @@
+.btn-dark {
+  background: #231f20;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  &:hover, &:active, &:focus {
+    background: lighten(#231f20, 15%);
+    color: whitesmoke;
+  }
+}

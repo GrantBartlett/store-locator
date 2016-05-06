@@ -33,6 +33,10 @@
   max-height: 100px;
 }
 
+.brand-details {
+  padding: 20px 0;
+}
+
 // Location
 .location-info-box {
   @extend .well;
@@ -49,14 +53,24 @@
   }
 }
 
+// Brand listings
+.well {
+  background: #F5F5F5;
+  color: #696969;
+  padding: 45px 30px;
+  text-align: center;
+}
 
-.btn-dark {
-  background: #231f20;
-  color: #fff;
-  padding-left: 20px;
-  padding-right: 20px;
-  &:hover, &:active, &:focus {
-    background: lighten(#231f20, 15%);
-    color: whitesmoke;
+.well .brand-logo {
+  max-height: 100px;
+  background: black;
+  width: 100px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 5px;
+
+  img {
+    padding: 35px 10px;
+    max-width: 100%;
   }
 }
