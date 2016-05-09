@@ -1,6 +1,9 @@
+<% content_for :header do %>
+  <h1>Sign in</h1>
+<% end %>
+
 <div class="row">
-  <div class="col-md-5 col-md-push-2">
-    <h1>Please <strong>sign in</strong> to continue</h1>
+  <div class="col-md-5">
     <%= render 'form' %>
     <p>No account? <%= link_to "Sign up here.", new_user_path %></p>
   </div>
