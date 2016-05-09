@@ -76,7 +76,7 @@ function addMarkerWithTimeout(position, timeout) {
       infowindow.maxWidth = 200;
       infowindow.open(map, marker);
     });
-    
+
     bounds.extend(marker.position);
     markers.push(marker);
   }, timeout);

@@ -1,19 +1,19 @@
 <% content_for :header do %>
-  <h1><%= @user.name %></h1>
+<h1>
+  <%= @user.name %>
+</h1>
 <% end %>
 
-<div class="media">
-  <div class="media-left">
-    <a href="#">
-      <%= gravatar_for @user %>
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading"><%= @user.name %></h4>
-    <p>
-      <%= @user.email %>
-    </p>
-    <%= link_to "Edit", edit_user_path(@user) %>
-    <%= link_to "Remove", @user, method: :delete, data: { confirm: "Are you sure?" } %>
+<%= render partial: 'shared/breadcrumb', locals: { name: 'Users', link: users_path, collection: @user } %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="profile">
+      Name: <%= @user.name %> <%= gravatar_for @user %> <br>
+      Email: <%= @user.email %> <br>
+      Admin: <%= @user.admin? %> <br>
+    </div>
   </div>
 </div>
+
+<%= render 'actions', :user => @user %>

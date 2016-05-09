@@ -8,11 +8,7 @@
     Email: <%= user.email %> <br>
     Admin: <%= user.admin? %> <br>
   </div>
-  <hr>
-  <div class="btn-group" role="group" aria-label="Basic example">
-    <%= link_to "Show", user, :class => "btn btn-default" %>
-    <%= link_to "Edit", edit_user_path(user), :class => "btn btn-default"  %>
-    <%= link_to "Remove", user, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-default"  %>
-  </div>
+
+  <%= render 'actions', :user => user %>
   <hr>
 <% end %>

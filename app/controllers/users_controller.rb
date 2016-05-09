@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:notice] = "Successfully logged in!"
       log_in @user
       redirect_to @user
     else
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
+      flash[:notice] = "Successfully updated user!"
       redirect_to @user
     else
       render 'edit'
@@ -41,8 +43,11 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user.destroy
+      flash[:notice] = "Successfully removed user"
       @user.destroy
       redirect_to users_path
+    else
+      flash[:notice] = "There was an error, are you admin bro?"
     end
   end
 
