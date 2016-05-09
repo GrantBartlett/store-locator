@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       redirect_to user
+      flash[:notice] = 'Successfully logged in as ' + user.name
     else
       render 'new'
     end
@@ -18,5 +19,6 @@ class SessionsController < ApplicationController
   def destroy
     log_out
     redirect_to users_path
+    flash[:notice] = 'Successfully logged out'
   end
 end

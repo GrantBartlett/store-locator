@@ -18,8 +18,10 @@ class ApplicationController < ActionController::Base
   end
 
   def require_admin
-    redirect_to(root_url) unless current_user.admin?
-    flash[:error] = "Dang it! You don't have permission to do this!"
+    if !current_user.admin?
+      redirect_to(root_url)
+      flash[:error] = "Dang it! You don't have permission to do this!"
+    end
   end
 
   def require_user
