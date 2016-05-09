@@ -4,7 +4,6 @@
 </h1>
 <% end %>
 
-<%= render partial: 'shared/breadcrumb', locals: { name: 'Users', link: users_path, collection: @user } %>
 
 <div class="row">
   <div class="col-md-12">
@@ -16,4 +15,4 @@
   </div>
 </div>
 
-<%= render 'actions', :user => @user %>
+<%= render partial: 'shared/actions', locals: { collection: @user, name: 'User', path: edit_user_path(@user) } %>

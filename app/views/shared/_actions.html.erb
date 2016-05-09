@@ -1,0 +1,15 @@
+<div class="btn-group" role="group" aria-label="Edit User">
+  <div class="btn-group">
+    <%= link_to collection, :class => "btn btn-primary btn-sm" do %>
+    <i class="material-icons">&#xE8F4;</i>
+    <% end %>
+
+    <%= link_to path, :class => "btn btn-success btn-sm" do %>
+    <i class="material-icons">&#xE8B8;</i>
+    <% end %>
+
+    <%= link_to collection, method: :delete, data: { confirm: "Are you sure you wish to delete?" }, :class => "btn btn-danger btn-sm" do %>
+    <i class="material-icons">&#xE92B;</i>
+    <% end %>
+  </div>
+</div>

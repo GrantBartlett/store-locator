@@ -9,6 +9,6 @@
     Admin: <%= user.admin? %> <br>
   </div>
 
-  <%= render 'actions', :user => user %>
+  <%= render partial: 'shared/actions', locals: { collection: user, name: 'User', path: edit_user_path(user) } %>
   <hr>
 <% end %>
