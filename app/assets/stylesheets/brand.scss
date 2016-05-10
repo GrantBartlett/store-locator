@@ -37,6 +37,28 @@
   padding: 20px 0;
 }
 
+.brand-info-box {
+  @extend .well;
+  background: #F5F5F5;
+  color: #696969;
+  padding: 45px 30px;
+  text-align: center;
+}
+
+.brand-info-box .brand-logo {
+  max-height: 100px;
+  background: black;
+  width: 100px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 5px;
+
+  img {
+    padding: 35px 10px;
+    max-width: 100%;
+  }
+}
+
 // Location
 .location-info-box {
   @extend .well;
@@ -50,27 +72,5 @@
   color: #494949;
   p {
     color: #949494
-  }
-}
-
-// Brand listings
-.well {
-  background: #F5F5F5;
-  color: #696969;
-  padding: 45px 30px;
-  text-align: center;
-}
-
-.well .brand-logo {
-  max-height: 100px;
-  background: black;
-  width: 100px;
-  height: 300px;
-  margin: 0 auto;
-  border-radius: 5px;
-
-  img {
-    padding: 35px 10px;
-    max-width: 100%;
   }
 }
