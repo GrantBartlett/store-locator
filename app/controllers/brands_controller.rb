@@ -2,6 +2,7 @@ class BrandsController < ApplicationController
   skip_before_action :require_user, only: [:show]
   skip_before_action :require_admin, only: [:show]
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
+  before_action :set_region
 
   def index
     @brands = Brand.all
@@ -48,6 +49,15 @@ class BrandsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_brand
     @brand = Brand.find Brand.decrypt(params[:id])
+  end
+
+  def set_region
+    region = []
+    locations = @brand.locations
+    locations.each do |location|
+      region.push(location.region)
+    end
+    @regions = region.uniq
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

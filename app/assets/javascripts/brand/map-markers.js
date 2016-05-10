@@ -5,7 +5,7 @@ function addMarkerWithTimeout(location, timeout) {
     var lat = parseFloat(location.lat);
     var lng = parseFloat(location.lng);
     var pos = { lat: lat, lng: lng };
-    var reg = 'test';
+    var reg = location.region;
 
     var marker = new google.maps.Marker({
       title: location.infoWindow,
@@ -43,7 +43,7 @@ function addMarkerWithTimeout(location, timeout) {
 function dropMarkers() {
   clearMarkers();
   for (var i = 0; i < locations.length; i++) {
-    addMarkerWithTimeout(locations[i], i * 400);
+    addMarkerWithTimeout(locations[i], i * 200);
   }
 }
 
