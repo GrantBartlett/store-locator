@@ -6,6 +6,14 @@ function filterMarkers(region) {
     if (marker.region == region || region.length === 0) {
       marker.setVisible(true);
       animateLocation(marker, 2000);
+
+      $('.location-info-box').each(function() {
+        if($(this).data('region') === region){
+          $(this).removeClass('hidden');
+        }else{
+          $(this).addClass('hidden');
+        }
+      });
     }
     // Region doesn't match
     else {
