@@ -16,6 +16,10 @@
   overflow-y: scroll;
 }
 
+.map-filters {
+  margin-top: 20px;
+}
+
 .embed-map {
   @extend .embed-responsive-16by9;
   min-height: 800px;
