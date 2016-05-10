@@ -1,10 +1,18 @@
 <%= render partial: 'brands/brand_logo' %>
 <div class="row">
+
   <div class="col-md-3">
+    <div class="map-filters">
+      <%= render partial: 'map_filters' %>
+    </div>
+
     <div class="map-locations">
       <%= render partial: @brand.locations, collection: @brand.locations, locals: {i: 0} %>
     </div>
-    <%= render partial: 'locations/form' %>
+
+    <div class="map-locations-form">
+      <%= render partial: 'locations/form' %>
+    </div>
   </div>
 
   <div class="col-md-9">

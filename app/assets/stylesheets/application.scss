@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "core"; // Core application styles when not viewing a brand
 @import "brand"; // Contains standard brand structure/styling, THEN individudal brand styling.
+@import "locations"; // Contains standard google map location styles, such as Info window popups
 @import "profile"; // User profile
 @import "menu";
 @import "users";
