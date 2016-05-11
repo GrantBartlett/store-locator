@@ -1,5 +1,5 @@
 <% if logged_in? %>
-  <%= form_for [@brand, @brand.locations.build] do |f| %>
+  <%= form_for [@brand, @location] do |f| %>
   <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name , id: "geo_name", class: "form-control" %>
