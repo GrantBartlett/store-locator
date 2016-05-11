@@ -13,10 +13,6 @@
     <div class="map-locations">
       <%= render partial: @brand.locations, collection: @brand.locations %>
     </div>
-
-    <div class="map-locations-form">
-      <%= render partial: 'locations/form' %>
-    </div>
   </div>
 
   <div class="col-md-9">
@@ -25,5 +21,5 @@
 </div>
 
 <% content_for :footer do %>
-  <%= javascript_include_tag '//maps.googleapis.com/maps/api/js?key=AIzaSyDkiHUkl-Syk3ZkNZYQcmLQZW3mNQZYj-Y&libraries=places&callback=initMap' %>
+<%= javascript_include_tag '//maps.googleapis.com/maps/api/js?key=AIzaSyDkiHUkl-Syk3ZkNZYQcmLQZW3mNQZYj-Y&libraries=places&callback=initMap' %>
 <% end %>

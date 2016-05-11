@@ -2,27 +2,27 @@
   <%= form_for [@brand, @brand.locations.build] do |f| %>
   <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name , class: "form-control" %>
+    <%= f.text_field :name , id: "geo_name", class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label :lat %><br>
-    <%= f.text_field :lat, class: "form-control" %>
+    <%= f.text_field :lat, id: "geo_lat", class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label :lng %><br>
-    <%= f.text_field :lng, class: "form-control" %>
+    <%= f.text_field :lng, id: "geo_lng", class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label :region %><br>
-    <%= f.text_field :region, class: "form-control" %>
+    <%= f.text_field :region, id: "geo_region", class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label :content %><br>
-    <%= f.text_area :content, class: "form-control" %>
+    <%= f.text_area :content, id: "geo_content", class: "form-control" %>
   </div>
 
   <div class="form-group">

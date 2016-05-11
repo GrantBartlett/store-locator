@@ -6,6 +6,7 @@ function filterResult(region) {
     if (marker.region === region) {
       showMarker(marker);
       showByRegion(region);
+      updateBounds(marker);
     }
     else if(region === 'all'){
       showByAllRegions(marker);

@@ -4,7 +4,6 @@ function animateLocation(marker, timeout){
     marker.setAnimation(null);
   } else {
     marker.setAnimation(google.maps.Animation.BOUNCE);
-    updateBounds(marker);
   }
 
   setTimeout(function() {
@@ -14,9 +13,6 @@ function animateLocation(marker, timeout){
 
 // Ensure locations are always visible in map
 function updateBounds(marker){
-  if(infowindow){
-    infowindow.close();
-  }
   map.panTo(marker.position);
   map.fitBounds(bounds);
   map.setCenter(bounds.getCenter());

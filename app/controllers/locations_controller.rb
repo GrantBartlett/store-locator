@@ -1,7 +1,8 @@
 class LocationsController < ApplicationController
   skip_before_action :require_user, only: [:index, :show]
   skip_before_action :require_admin, only: [:index, :show]
-  before_action :set_brand
+  before_action :set_brand, only: [:show, :edit, :update, :destroy]
+  before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
     @locations = @brand.locations.all
@@ -51,6 +52,11 @@ class LocationsController < ApplicationController
   def set_brand
     @brand = Brand.find Brand.decrypt(params[:brand_id])
   end
+
+  def set_location
+    @location = Location.find(params[:id])
+  end
+
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def location_params
