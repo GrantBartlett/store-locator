@@ -1,7 +1,7 @@
 <div class="form-group">
   <label for="region" class="control-label sr-only">Please pick a region</label>
-  <select id="region" onchange="filterMarkers(this.value);" class="form-control">
-    <option value="">Please select a region</option>
+  <select id="region" onchange="filterResult(this.value);" class="form-control">
+    <option value="all">Please select a region</option>
     <% @regions.each do |region| %>
       <option value="<%= region %>"><%= region %></option>
     <% end %>

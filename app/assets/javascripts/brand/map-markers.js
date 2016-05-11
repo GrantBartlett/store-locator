@@ -55,6 +55,17 @@ function clearMarkers() {
   markers = [];
 }
 
+// Show marker
+function showMarker(marker){
+  marker.setVisible(true);
+  animateLocation(marker, 2000);
+}
+
+// Hide marker
+function hideMarker(marker){
+  marker.setVisible(false);
+}
+
 // Open Brand Location Info Window by id
 function openInfoWindow(brand_location_id){
   google.maps.event.trigger(markers[brand_location_id], 'click');

@@ -1,23 +1,34 @@
 // Filter markers
-function filterMarkers(region) {
+function filterResult(region) {
   for (i = 0; i < markers.length; i++) {
     marker = markers[i];
-    // If is same region or region not picked
-    if (marker.region == region || region.length === 0) {
-      marker.setVisible(true);
-      animateLocation(marker, 2000);
 
-      $('.location-info-box').each(function() {
-        if($(this).data('region') === region){
-          $(this).removeClass('hidden');
-        }else{
-          $(this).addClass('hidden');
-        }
-      });
+    if (marker.region === region) {
+      showMarker(marker);
+      showByRegion(region);
     }
-    // Region doesn't match
+    else if(region === 'all'){
+      showByAllRegions(marker);
+    }
     else {
-      marker.setVisible(false);
+      hideMarker(marker);
     }
   }
+}
+
+function showByRegion(region){
+  $('.location-info-box').each(function() {
+    if($(this).data('region') === region){
+      $(this).removeClass('hidden');
+    }else if(region !== ''){
+      $(this).addClass('hidden');
+    }
+  });
+}
+
+function showByAllRegions(marker){
+  $('.location-info-box').each(function(){
+    $(this).removeClass('hidden');
+    showMarker(marker);
+  });
 }
