@@ -36,6 +36,10 @@ function initGoogleMaps(data){
     zoom: 12,
   });
 
+  // Create the search box and link it to the UI element.
+  var input = document.getElementById('searchTextField');
+  var searchBox = new google.maps.places.SearchBox(input);
+
   // We're ready. Drop the locations onto the map!
   dropMarkers();
 }

@@ -3,6 +3,10 @@
 
   <div class="col-md-3">
     <div class="map-filters">
+      <input id="searchTextField" type="text" class="form-control" placeholder="Search">
+    </div>
+
+    <div class="map-filters">
       <%= render partial: 'map_filters' %>
     </div>
 
@@ -21,5 +25,5 @@
 </div>
 
 <% content_for :footer do %>
-  <%= javascript_include_tag '//maps.googleapis.com/maps/api/js?key=AIzaSyDkiHUkl-Syk3ZkNZYQcmLQZW3mNQZYj-Y&region=AR&v=3.23&callback=initMap' %>
+  <%= javascript_include_tag '//maps.googleapis.com/maps/api/js?key=AIzaSyDkiHUkl-Syk3ZkNZYQcmLQZW3mNQZYj-Y&libraries=places&callback=initMap' %>
 <% end %>

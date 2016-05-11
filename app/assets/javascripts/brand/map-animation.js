@@ -4,6 +4,8 @@ function animateLocation(marker, timeout){
     marker.setAnimation(null);
   } else {
     marker.setAnimation(google.maps.Animation.BOUNCE);
+    map.setZoom(10);
+    map.panTo(marker.position);
   }
 
   setTimeout(function() {
