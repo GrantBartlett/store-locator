@@ -4,11 +4,20 @@ function animateLocation(marker, timeout){
     marker.setAnimation(null);
   } else {
     marker.setAnimation(google.maps.Animation.BOUNCE);
-    map.setZoom(10);
-    map.panTo(marker.position);
+    updateBounds(marker);
   }
 
   setTimeout(function() {
     marker.setAnimation(null);
   }, timeout);
+}
+
+// Ensure locations are always visible in map
+function updateBounds(marker){
+  if(infowindow){
+    infowindow.close();
+  }
+  map.panTo(marker.position);
+  map.fitBounds(bounds);
+  map.setCenter(bounds.getCenter());
 }
