@@ -2,7 +2,7 @@ class BrandsController < ApplicationController
   skip_before_action :require_user, only: [:show]
   skip_before_action :require_admin, only: [:show]
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
-  before_action :set_region
+  before_action :set_region, only: [:show]
 
   def index
     @brands = Brand.all

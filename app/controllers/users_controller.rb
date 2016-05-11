@@ -42,11 +42,11 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user.destroy
-      flash[:notice] = "Successfully removed user"
+      flash[:notice] = "Successfully removed user!"
       @user.destroy
       redirect_to users_path
     else
-      flash[:notice] = "There was an error, are you admin bro?"
+      flash[:notice] = "There was an error, insufficient permissions."
     end
   end
 
