@@ -3,7 +3,7 @@
 
   <div class="col-md-3">
     <div class="map-filters">
-      <input id="searchTextField" type="text" class="form-control" placeholder="Search">
+      <input id="searchTextField" type="text" class="form-control" placeholder="<%=t :search %>">
     </div>
 
     <div class="map-filters">
@@ -16,7 +16,7 @@
 
     <% if is_admin? %>
       <%= link_to new_brand_location_path(@brand), class: 'btn btn-dark' do %>
-        Add new location <i class="fa fa-map-marker fa-fw fa-lg" aria-hidden="true"></i>
+        <%=t :create_new %> <i class="fa fa-map-marker fa-fw fa-lg" aria-hidden="true"></i>
       <% end %>
     <% end %>
   </div>

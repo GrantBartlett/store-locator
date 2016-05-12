@@ -20,4 +20,27 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+
+  # Page Titles
+  store_locator: "Store Locator"
+  brand: "Brand"
+  brands: "Brands"
+  location: "Location"
+
+  # Buttons
+  create_new: "Create new?"
+
+  # Brands
+  landmark_group: "Landmark group"
+
+  # Misc
+  description: "Description"
+  online: "Online"
+  new: "New"
+  edit: "Edit"
+  search: "Search"
+  select_region: "Please select a region"
+  title: "Title"
+  logo: "Logo"
+  url: "Url"
+  published: "Published"

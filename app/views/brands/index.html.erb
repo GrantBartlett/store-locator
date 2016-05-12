@@ -1,11 +1,11 @@
 <% content_for :header do %>
-<h1>Brands</h1>
+  <h1><%=t :brands %></h1>
 <% end %>
 
 <div class="row">
   <div class="col-md-12">
-    <h2>Landmark group
-      <small><%= link_to 'Create new?',  new_brand_path, :class => 'btn' %></small>
+    <h2><%=t :landmark_group %>
+      <small><%= link_to I18n.t 'create_new',  new_brand_path, :class => 'btn' %></small>
     </h2>
   </div>
 
@@ -18,9 +18,9 @@
       </div>
 
       <div class="brand-details">
-        <h4>Brand: <%= brand.title %></h4>
-        <p>Description: <%= brand.description %></p>
-        <p>Online: <%= brand.published? %></p>
+        <h4><%=t :brand %> : <%= brand.title %></h4>
+        <p><%=t :description %> : <%= brand.description %></p>
+        <p><%=t :online %>: <%= brand.published? %></p>
       </div>
 
       <div class="btn-group" role="group" aria-label="Edit Brands">

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :require_user
   before_action :require_admin, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  before_action :set_locale
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -26,5 +27,9 @@ class ApplicationController < ActionController::Base
 
   def require_user
     redirect_to(root_url) unless logged_in?
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 end
