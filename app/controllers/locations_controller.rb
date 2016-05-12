@@ -11,6 +11,7 @@ class LocationsController < ApplicationController
 
   def create
     @location = @brand.locations.new(location_params)
+
     if @location.save
       redirect_to @brand
     else
@@ -59,6 +60,6 @@ class LocationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def location_params
-    params[:location].permit([:name, :lat, :lng, :content, :region])
+    params[:location].permit([:name, :lat, :lng, :content, :region, :en, :ar])
   end
 end

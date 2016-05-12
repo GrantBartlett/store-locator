@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510133017) do
+ActiveRecord::Schema.define(version: 20160512151129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "brands", force: :cascade do |t|
     t.integer  "user_id"
@@ -39,9 +40,11 @@ ActiveRecord::Schema.define(version: 20160510133017) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "region"
+    t.hstore   "locale"
   end
 
   add_index "locations", ["brand_id"], name: "index_locations_on_brand_id", using: :btree
+  add_index "locations", ["locale"], name: "index_locations_on_locale", using: :gist
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

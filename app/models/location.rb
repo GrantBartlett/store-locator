@@ -4,4 +4,5 @@ class Location < ActiveRecord::Base
   validates :lng, presence: true
   validates :region, presence: true
   belongs_to :brand
+  store_accessor :locale, [:en, :ar]
 end

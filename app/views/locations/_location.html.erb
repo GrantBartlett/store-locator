@@ -17,6 +17,11 @@
     <li>
       <%= location.lng %>
     </li>
+    <li>
+      <strong>Locale:</strong>
+      <%= location.locale['en'] %>
+      <%= location.locale['ar'] %>
+    </li>
   </ul>
 
   <%= render partial: 'locations/actions', locals: { location: location, counter: location_counter } %>
