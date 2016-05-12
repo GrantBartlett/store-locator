@@ -13,6 +13,12 @@
     <div class="map-locations">
       <%= render partial: @brand.locations, collection: @brand.locations %>
     </div>
+
+    <% if is_admin? %>
+      <%= link_to new_brand_location_path(@brand), class: 'btn btn-dark' do %>
+        Add new location <i class="fa fa-map-marker fa-fw fa-lg" aria-hidden="true"></i>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="col-md-9">
