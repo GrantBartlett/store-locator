@@ -15,7 +15,3 @@
     <%= render partial: 'google_map_geocode' %>
   </div>
 </div>
-
-<% content_for :footer do %>
-<%= javascript_include_tag '//maps.googleapis.com/maps/api/js?key=AIzaSyDkiHUkl-Syk3ZkNZYQcmLQZW3mNQZYj-Y&libraries=places&callback=initMapLocations' %>
-<% end %>
