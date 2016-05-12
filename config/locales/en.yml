@@ -39,6 +39,7 @@ en:
   online: "Online"
   new: "New"
   edit: "Edit"
+  home: "Home"
 
   # Misc brand related
   title: "Title"
@@ -57,8 +58,10 @@ en:
   # Misc account related
   sign_in: "Sign in"
   sign_up: "Sign up"
+  sign_out: "Sign out"
   no_account: "No account?"
   have_account: "Have an account?"
+  profile: "Profile"
   email: "Email"
   admin: "Admin"
   password: "Password"

@@ -1,0 +1,70 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ar:
+
+  # Page Titles
+  store_locator: "فروعنا"
+  brand: "علامة تجارية"
+  brands: "العلامات التجارية"
+  location: "موقع"
+  locations: "مواقع"
+  user: "مستخدم"
+  users: "المستخدمين"
+
+  # Brands
+  landmark_group: "Landmark group"
+
+  # Misc
+  name: "اسم"
+  description: "وصف"
+  online: "على الانترنت"
+  new: "جديد"
+  edit: "تحرير"
+  home: "الصفحة الرئيسية"
+
+  # Misc brand related
+  title: "عنوان"
+  logo: "شعار"
+  url: "رابط"
+  published: "نشرت"
+
+  # Misc location related
+  find: "تجد"
+  find_by_address: "البحث عن عنوان"
+  enter_address: "أدخل العنوان"
+  region: "منطقة"
+  select_region: "الرجاء اختيار المنطقة"
+  search: "بحث"
+
+  # Misc account related
+  sign_in: "تسجيل الدخول"
+  sign_up: "سجل"
+  sign_out: "خروج"
+  no_account: "لا حساب؟"
+  have_account: "هل لديك حساب؟"
+  profile: "الملف الشخصي"
+  email: "البريد الإلكتروني"
+  admin: "مدير"
+  password: "كلمه السر"
+
+  # Buttons
+  create_new: "خلق فرص عمل جديدة؟"

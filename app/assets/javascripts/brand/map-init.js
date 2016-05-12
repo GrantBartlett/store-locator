@@ -13,7 +13,7 @@ function initMap() {
 function getLocations(){
   $(function(){
     if(document.getElementById('map')){
-      var current_url = window.location.href;
+      var current_url = window.location.href.split('?')[0];
       $.ajax({
         type: "GET",
         dataType: "json",
