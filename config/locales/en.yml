@@ -26,21 +26,42 @@ en:
   brand: "Brand"
   brands: "Brands"
   location: "Location"
-
-  # Buttons
-  create_new: "Create new?"
+  locations: "Locations"
+  user: "User"
+  users: "Users"
 
   # Brands
   landmark_group: "Landmark group"
 
   # Misc
+  name: "Name"
   description: "Description"
   online: "Online"
   new: "New"
   edit: "Edit"
-  search: "Search"
-  select_region: "Please select a region"
+
+  # Misc brand related
   title: "Title"
   logo: "Logo"
   url: "Url"
   published: "Published"
+
+  # Misc location related
+  find: "Find"
+  find_by_address: "Find by address"
+  enter_address: "Enter address"
+  region: "Region"
+  select_region: "Please select a region"
+  search: "Search"
+
+  # Misc account related
+  sign_in: "Sign in"
+  sign_up: "Sign up"
+  no_account: "No account?"
+  have_account: "Have an account?"
+  email: "Email"
+  admin: "Admin"
+  password: "Password"
+
+  # Buttons
+  create_new: "Create new?"

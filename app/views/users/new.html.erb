@@ -1,9 +1,9 @@
 <% content_for :header do %>
-  <h1>Create a <strong>new account</strong></h1>
+  <h1><%=t :no_account %> <%=t: create_new %></h1>
 <% end %>
 <div class="row">
   <div class="col-md-5">
     <%= render 'form_new' %>
-    <p>Have an account? <%= link_to "Sign in", sessions_new_path %></p>
+    <p><%=t :have_account %> <%= link_to "Sign in", sessions_new_path %></p>
   </div>
 </div>

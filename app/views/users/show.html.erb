@@ -1,16 +1,14 @@
 <% content_for :header do %>
-<h1>
-  <%= @user.name %>
-</h1>
+<h1><%= @user.name %></h1>
 <% end %>
 
 
 <div class="row">
   <div class="col-md-12">
     <div class="profile">
-      Name: <%= @user.name %> <%= gravatar_for @user %> <br>
-      Email: <%= @user.email %> <br>
-      Admin: <%= @user.admin? %> <br>
+      <%=t :name %> : <%= @user.name %> <%= gravatar_for @user %> <br>
+      <%=t :email %> : <%= @user.email %> <br>
+      <%=t :admin %> : <%= @user.admin? %> <br>
     </div>
   </div>
 </div>

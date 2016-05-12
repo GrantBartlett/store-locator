@@ -2,7 +2,7 @@
 <div class="btn-group" role="group" aria-label="Edit User">
   <div class="btn-group">
     <button class="btn btn-dark" onclick="openInfoWindow(<%= counter %>);">
-      Find <i class="fa fa-location-arrow fa-fw fa-lg" aria-hidden="true"></i>
+      <%=t :find %> <i class="fa fa-location-arrow fa-fw fa-lg" aria-hidden="true"></i>
     </button>
     <% if is_admin? %>
     <%= link_to edit_brand_location_path(@brand, location.id), :class => "btn btn-success" do %>

@@ -1,12 +1,12 @@
 <% content_for :header do %>
-  <h1>Users</h1>
+  <h1><%=t :users %></h1>
 <% end %>
 
 <% @users.each do |user| %>
   <div class="profile">
-    Name: <%= user.name %> <%= gravatar_for user %> <br>
-    Email: <%= user.email %> <br>
-    Admin: <%= user.admin? %> <br>
+    <%=t :name%> : <%= user.name %> <%= gravatar_for user %> <br>
+    <%=t :email %> : <%= user.email %> <br>
+    <%=t :admin %> : <%= user.admin? %> <br>
   </div>
 
   <%= render partial: 'shared/actions', locals: { collection: user, name: 'User', path: edit_user_path(user) } %>
