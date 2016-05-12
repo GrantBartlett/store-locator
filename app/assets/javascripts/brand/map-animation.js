@@ -11,9 +11,9 @@ function animateLocation(marker, timeout){
   }, timeout);
 }
 
-// Ensure locations are always visible in map
-function updateBounds(marker){
+// Update map location
+function updateBounds(marker, zoom){
   map.panTo(marker.position);
-  map.fitBounds(bounds);
-  map.setCenter(bounds.getCenter());
+  map.setCenter(marker.position);
+  map.setZoom(zoom);
 }

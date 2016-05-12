@@ -25,6 +25,7 @@ function addMarkerWithTimeout(location, timeout) {
       infowindow.maxWidth = 200;
       infowindow.open(map, marker);
       animateLocation(marker, 2000);
+      updateBounds(marker, 15);
     });
 
     bounds.extend(marker.position);
