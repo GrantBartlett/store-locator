@@ -1,28 +1,35 @@
-<div class="location-info-box" data-region="<%= location.region %>">
+<div class="location-info-box locale-en" data-region="<%= location.region_en %>">
   <ul class="list-unstyled">
     <li>
-      <h4><%= location.name %></h4>
+      <h4><%= location.name_en %></h4>
     </li>
     <li>
-      <p>
-        <%= location.content %>
-      </p>
+      <%=t :region %> : <%= location.region_en %>
     </li>
     <li>
-      <%=t :region %> : <%= location.region %>
+      <strong>Opening Hours</strong>
+      <%= location.opening_hours_en %>
     </li>
     <li>
-      <%= location.lat %>
-    </li>
-    <li>
-      <%= location.lng %>
-    </li>
-    <li>
-      <strong>Locale:</strong>
-      <%= location.locale['en'] %>
-      <%= location.locale['ar'] %>
+      <%= location.content_en %>
     </li>
   </ul>
-
+</div>
+<div class="location-info-box locale-ar" data-region="<%= location.region_ar %>">
+  <ul class="list-unstyled">
+    <li>
+      <h4><%= location.name_ar %></h4>
+    </li>
+    <li>
+      <%=t :region %> : <%= location.region_ar %>
+    </li>
+    <li>
+      <strong>Opening Hours</strong>
+      <%= location.opening_hours_ar %>
+    </li>
+    <li>
+      <%= location.content_ar %>
+    </li>
+  </ul>
   <%= render partial: 'locations/actions', locals: { location: location, counter: location_counter } %>
 </div>

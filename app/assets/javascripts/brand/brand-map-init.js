@@ -3,6 +3,7 @@ var markers = [];
 var map;
 var bounds;
 var infowindow;
+var locale;
 
 // Called by Google maps api script
 function initMap() {
@@ -21,6 +22,7 @@ function getLocations(){
         success: function(data){
           locations = data;
           initGoogleMaps(locations);
+          locale = getCookie('locale'); // stored by rails
         }
       });
     }

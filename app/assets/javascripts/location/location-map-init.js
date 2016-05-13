@@ -23,7 +23,7 @@ function codeAddress() {
 
       $('#geo_lat').val(lat);
       $('#geo_lng').val(lng);
-      $('#geo_content').val(content);
+      $('#geo_content_en').val(content);
 
       var marker = new google.maps.Marker(
         {

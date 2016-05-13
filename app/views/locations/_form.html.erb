@@ -1,8 +1,63 @@
 <% if logged_in? %>
   <%= form_for [@brand, @location] do |f| %>
   <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name , id: "geo_name", class: "form-control" %>
+
+    <!-- Nav tabs -->
+    <ul id="new_location_tabs" class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#name_en" aria-controls="name_en" role="tab" data-toggle="tab">English</a></li>
+      <li role="presentation"><a href="#name_ar" aria-controls="name_ar" role="tab" data-toggle="tab">Arabic</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="name_en">
+        <div class="well">
+          <div class="form-group">
+            <%= f.label :name_en %>
+            <%= f.text_field :name_en , id: "geo_name_en", class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :region_en %><br>
+            <%= f.text_field :region_en, id: "geo_region_en", class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :content_en %><br>
+            <%= f.text_area :content_en, id: "geo_content_en", class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :opening_hours_en %><br>
+            <%= f.text_area :opening_hours_en, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+
+      <div role="tabpanel" class="tab-pane fade" id="name_ar">
+        <div class="well">
+          <div class="form-group">
+            <%= f.label :name_ar %>
+            <%= f.text_field :name_ar , id: "geo_name_ar", class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :region_ar %><br>
+            <%= f.text_field :region_ar, id: "geo_region_ar", class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :content_ar %><br>
+            <%= f.text_area :content_ar, id: "geo_content_ar", class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :opening_hours_ar %><br>
+            <%= f.text_area :opening_hours_ar, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="form-group">
@@ -13,26 +68,6 @@
   <div class="form-group">
     <%= f.label :lng %><br>
     <%= f.text_field :lng, id: "geo_lng", class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :region %><br>
-    <%= f.text_field :region, id: "geo_region", class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :en %><br>
-    <%= f.text_area :en, id: "geo_content", class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :ar %><br>
-    <%= f.text_area :ar, id: "geo_content", class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :content %><br>
-    <%= f.text_area :content, id: "geo_content", class: "form-control" %>
   </div>
 
   <div class="form-group">

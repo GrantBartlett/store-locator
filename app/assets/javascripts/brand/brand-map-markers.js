@@ -1,11 +1,22 @@
+// Delay markers dropping
+function dropMarkers() {
+  clearMarkers();
+  for (var i = 0; i < locations.length; i++) {
+    addMarkerWithTimeout(locations[i], i * 200);
+  }
+}
+
 // Adding markers with delay
 function addMarkerWithTimeout(location, timeout) {
 
   window.setTimeout(function() {
-    var lat = parseFloat(location.lat);
-    var lng = parseFloat(location.lng);
-    var pos = { lat: lat, lng: lng };
-    var reg = location.region;
+    var lat = parseFloat(location.lat),
+        lng = parseFloat(location.lng),
+        pos = { lat: lat, lng: lng },
+        title = location['name']['name_' + locale],
+        content = location['content']['content_' + locale],
+        hours = location['opening_hours']['opening_hours_' + locale],
+        reg = location['region']['region_' + locale];
 
     var marker = new google.maps.Marker({
       title: location.infoWindow,
@@ -15,10 +26,11 @@ function addMarkerWithTimeout(location, timeout) {
       animation: google.maps.Animation.DROP
     });
 
-    var contentTitle = '<h4 class="infowindow-title">'+ location.name +'</h4>';
-    var contentBody = '<div class="infowindow-body">'+ location.content + '</div>';
-    var contentRegion = '<div class="infowindow-region">' + reg + '</div>';
-    var infoWindowContent = contentTitle += contentBody;
+    var contentTitle = '<h4 class="infowindow-title">'+ title +'</h4>',
+        contentBody = '<div class="infowindow-body">'+ content + '</div>',
+        contentHours = '<div class="infowindow-hours">'+ hours + '</div>',
+        contentRegion = '<div class="infowindow-region">' + reg + '</div>',
+        infoWindowContent = contentTitle += contentBody;
 
     google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(infoWindowContent);
@@ -38,14 +50,6 @@ function addMarkerWithTimeout(location, timeout) {
     map.setZoom(5);
     google.maps.event.removeListener(listener);
   });
-}
-
-// Delay markers dropping
-function dropMarkers() {
-  clearMarkers();
-  for (var i = 0; i < locations.length; i++) {
-    addMarkerWithTimeout(locations[i], i * 200);
-  }
 }
 
 // Remove markers

@@ -1,8 +1,8 @@
 class LocationsController < ApplicationController
   skip_before_action :require_user, only: [:index, :show]
   skip_before_action :require_admin, only: [:index, :show]
-  before_action :set_brand
   before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :set_brand
 
   def index
     @locations = @brand.locations.all
@@ -60,6 +60,9 @@ class LocationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def location_params
-    params[:location].permit([:name, :lat, :lng, :content, :region, :en, :ar])
+    params[:location].permit([
+      :name_en, :content_en, :region_en, :opening_hours_en,:name_ar, :content_ar,
+      :opening_hours_ar, :lat, :lng
+    ])
   end
 end
