@@ -1,0 +1,17 @@
+.rtl {
+  direction: RTL;
+}
+.rtl .pull-right {
+  float:left !important;
+}
+
+.ar {
+  .locale-en {
+    @extend .hidden;
+  }
+}
+.en {
+  .locale-ar {
+    @extend .hidden;
+  }
+}

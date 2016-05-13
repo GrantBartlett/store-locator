@@ -1,9 +1,19 @@
-<div class="form-group">
+<div class="form-group locale-en">
   <label for="region" class="control-label sr-only"><%=t :select_region %></label>
   <select id="region" onchange="filterResult(this.value);" class="form-control">
     <option value="all"><%=t :select_region %></option>
     <% @regions.each do |region| %>
-      <option value="<%= region %>"><%= region %></option>
+      <option value="<%= region['region_en'] %>"><%= region['region_en'] %></option>
+    <% end %>
+  </select>
+</div>
+
+<div class="form-group locale-ar">
+  <label for="region" class="control-label sr-only"><%=t :select_region %></label>
+  <select id="region" onchange="filterResult(this.value);" class="form-control">
+    <option value="all"><%=t :select_region %></option>
+    <% @regions.each do |region| %>
+      <option value="<%= region['region_ar'] %>"><%= region['region_ar'] %></option>
     <% end %>
   </select>
 </div>

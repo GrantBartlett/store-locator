@@ -13,9 +13,8 @@ function codeAddress() {
   var lng = document.getElementById("geo_lng").value;
 
   geocoder.geocode( { 'address': address}, function(results, status){
-    if (status == google.maps.GeocoderStatus.OK) {
-      console.log(results);
 
+    if (status == google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);
       lat = results[0].geometry.location.lat;
       lng = results[0].geometry.location.lng;
@@ -25,14 +24,12 @@ function codeAddress() {
       $('#geo_lng').val(lng);
       $('#geo_content_en').val(content);
 
-      var marker = new google.maps.Marker(
-        {
-          map: map,
-          position: results[0].geometry.location
-        });
-      }
-      else {
-        alert("Geocode was not successful for the following reason: " + status);
-      }
-    });
-  }
+      var marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location
+      });
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }
+  });
+}

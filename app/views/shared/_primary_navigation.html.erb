@@ -12,8 +12,8 @@
     <% end %>
 
     <ul class="nav navbar-nav navbar-right locale">
-      <li><%= link_to 'English', url_for( :locale => 'en' ) %></li>
-      <li><%= link_to 'Arabic', url_for( :locale => 'ar' ) %></li>
+      <li><%= link_to 'English', url_for( :locale => 'en' ), method: :get %></li>
+      <li><%= link_to 'Arabic', url_for( :locale => 'ar' ), method: :get %></li>
     </ul>
 
     <% if logged_in? %>
