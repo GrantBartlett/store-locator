@@ -44,4 +44,6 @@ function initGoogleMaps(data){
 
   // We're ready. Drop the locations onto the map!
   dropMarkers();
+
+  $('.map-results').removeClass('hidden');
 }

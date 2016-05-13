@@ -1,5 +1,9 @@
 .rtl {
   direction: RTL;
+
+  .btn-group {
+    float: left!important;
+  }
 }
 .rtl .pull-right {
   float:left !important;
