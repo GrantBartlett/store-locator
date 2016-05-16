@@ -10,12 +10,14 @@ function dropMarkers() {
 function addMarkerWithTimeout(location, timeout) {
 
   window.setTimeout(function() {
+    console.log(location);
     var lat = parseFloat(location.lat),
         lng = parseFloat(location.lng),
         pos = { lat: lat, lng: lng },
         title = location['name']['name_' + locale],
         content = location['content']['content_' + locale],
-        hours = location['opening_hours']['opening_hours_' + locale],
+        hours = location['opening_hours']['opening_hours'],
+        categories = location['categories'],
         reg = location['region']['region_' + locale];
 
     var marker = new google.maps.Marker({
@@ -30,7 +32,7 @@ function addMarkerWithTimeout(location, timeout) {
         contentBody = '<div class="infowindow-body">'+ content + '</div>',
         contentHours = '<div class="infowindow-hours">'+ hours + '</div>',
         contentRegion = '<div class="infowindow-region">' + reg + '</div>',
-        infoWindowContent = contentTitle += contentBody;
+        infoWindowContent = contentTitle += contentBody += contentHours;
 
     google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(infoWindowContent);

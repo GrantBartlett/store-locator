@@ -1,6 +1,17 @@
 <div class="location-info-box clearfix locale-en" data-region="<%= location.region_en %>">
   <h4><%= location.name_en %></h4>
   <p><%= location.content_en %></p>
+  <ul class="list-inline categories">
+    <% if location.cat_mens %>
+      <li><%=t 'mens' %></li>
+    <% end %>
+    <% if location.cat_womens %>
+      <li><%=t 'womens' %></li>
+    <% end %>
+    <% if location.cat_kids %>
+      <li><%=t 'kids' %></li>
+    <% end %>
+  </ul>
 
   <div class="btn data-show" data-show=".opening-hours-<%= location_counter %>" data-icon-show="fa-sort-asc" data-icon-hide="fa-sort-desc">
     <i class="fa fa-sort-desc" aria-hidden="true"></i>
@@ -13,6 +24,7 @@
   <%= render partial: 'locations/actions', locals: { location: location, counter: location_counter } %>
 </div>
 
+<!-- Todo: Make DRY! -->
 <div class="location-info-box clearfix locale-ar" data-region="<%= location.region_ar %>">
   <h4><%= location.name_ar %></h4>
   <p><%= location.content_ar %></p>

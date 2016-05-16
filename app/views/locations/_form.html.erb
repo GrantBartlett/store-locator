@@ -90,10 +90,17 @@
   <p>Choose one ore more categories that are relevent to this location.</p>
 
   <div class="row">
-    <div class="form-group col-md-12">
-      <%= f.select(:categories, [['Mens', 'cat_mens'], ['Womens', 'cat_womens'], ['Kids', 'cat_kids']],
-      {}, { :multiple => true, :class => 'form-control' })
-      %>
+    <div class="form-group col-md-4">
+      <%= f.label :cat_mens, 'Mens' %>
+      <%= f.check_box :cat_mens %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :cat_womens, 'Womens' %>
+      <%= f.check_box :cat_womens %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :cat_kids, 'Kids' %>
+      <%= f.check_box :cat_kids %>
     </div>
   </div>
 
