@@ -1,3 +1,5 @@
+var marker;
+
 function initMapLocations() {
   geocoder = new google.maps.Geocoder();
   map = new google.maps.Map(document.getElementById("map"),
@@ -13,7 +15,6 @@ function codeAddress() {
   var lng = document.getElementById("geo_lng").value;
 
   geocoder.geocode( { 'address': address}, function(results, status){
-
     if (status == google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);
       lat = results[0].geometry.location.lat;
@@ -24,12 +25,22 @@ function codeAddress() {
       $('#geo_lng').val(lng);
       $('#geo_content_en').val(content);
 
-      var marker = new google.maps.Marker({
+      marker = new google.maps.Marker({
         map: map,
-        position: results[0].geometry.location
+        position: results[0].geometry.location,
+        draggable: true
       });
+      markerCoords(marker);
     } else {
       alert("Geocode was not successful for the following reason: " + status);
     }
+  });
+}
+
+
+function markerCoords(markerobject){
+  google.maps.event.addListener(markerobject, 'dragend', function(evt){
+    $('#geo_lat').val(evt.latLng.lat());
+    $('#geo_lng').val(evt.latLng.lng());
   });
 }
