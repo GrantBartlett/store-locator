@@ -66,6 +66,7 @@
 // Location
 .location-info-box {
   @extend .well;
+  position: relative;
   background: none;
   border: none;
   border-top: 1px solid #EFEFEF;
@@ -77,4 +78,10 @@
   p {
     color: #949494
   }
+}
+
+.data-show {
+  position: absolute;
+  right: 0;
+  top: 20px;
 }

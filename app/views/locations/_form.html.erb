@@ -26,11 +26,6 @@
             <%= f.label :content_en %><br>
             <%= f.text_area :content_en, id: "geo_content_en", class: "form-control" %>
           </div>
-
-          <div class="form-group">
-            <%= f.label :opening_hours_en %><br>
-            <%= f.text_area :opening_hours_en, class: "form-control" %>
-          </div>
         </div>
       </div>
 
@@ -50,28 +45,63 @@
             <%= f.label :content_ar %><br>
             <%= f.text_area :content_ar, id: "geo_content_ar", class: "form-control" %>
           </div>
-
-          <div class="form-group">
-            <%= f.label :opening_hours_ar %><br>
-            <%= f.text_area :opening_hours_ar, class: "form-control" %>
-          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :lat %><br>
-    <%= f.text_field :lat, id: "geo_lat", class: "form-control" %>
+  <h4>Opening Hours</h4>
+  <p>Enter opening times, e.g 09:00 - 18:00</p>
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :mon %>
+      <%= f.text_field :mon, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :tue %>
+      <%= f.text_field :tue, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :wed %>
+      <%= f.text_field :wed, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :lng %><br>
-    <%= f.text_field :lng, id: "geo_lng", class: "form-control" %>
+  <div class="row">
+    <div class="form-group col-md-3">
+      <%= f.label :thu %>
+      <%= f.text_field :thu, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :fri %>
+      <%= f.text_field :fri, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :sat %>
+      <%= f.text_field :sat, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :sun %>
+      <%= f.text_field :sun, class: "form-control" %>
+    </div>
+  </div>
+
+  <h4>Location data</h4>
+  <p>Enter this manually or have the geocoder on the right fill this in for you.</p>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label :lat %><br>
+      <%= f.text_field :lat, id: "geo_lat", class: "form-control" %>
+    </div>
+
+    <div class="form-group col-md-6">
+      <%= f.label :lng %><br>
+      <%= f.text_field :lng, id: "geo_lng", class: "form-control" %>
+    </div>
   </div>
 
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
   </div>
   <% end %>
-<% end %>
+  <% end %>

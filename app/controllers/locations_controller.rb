@@ -62,7 +62,7 @@ class LocationsController < ApplicationController
   def location_params
     params[:location].permit([
       :name_en, :name_ar, :content_en, :content_ar, :region_en, :region_ar,
-      :opening_hours_en, :opening_hours_ar, :lat, :lng
+      :mon, :tue, :wed, :thu, :fri, :sat, :sun, :lat, :lng
     ])
   end
 end

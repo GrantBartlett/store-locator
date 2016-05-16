@@ -1,51 +1,23 @@
-<div class="clearfix">
-  <div class="location-info-box locale-en" data-region="<%= location.region_en %>">
-    <ul class="list-unstyled">
-      <li>
-        <h4><%= location.name_en %></h4>
-      </li>
-      <li>
-        <p>
-          <%=t :region %> : <%= location.region_en %>
-        </p>
-      </li>
-      <li>
-        <strong>Opening Hours</strong>
-        <p>
-          <%= location.opening_hours_en %>
-        </p>
-      </li>
-      <li>
-        <p>
-          <%= location.content_en %>
-        </p>
-      </li>
-    </ul>
-    <%= render partial: 'locations/actions', locals: { location: location, counter: location_counter } %>
+<div class="location-info-box clearfix locale-en" data-region="<%= location.region_en %>">
+  <h4><%= location.name_en %></h4>
+  <p><%= location.content_en %></p>
+
+  <div class="btn data-show" data-show=".opening-hours" data-icon-show="fa-sort-asc" data-icon-hide="fa-sort-desc">
+    <i class="fa fa-sort-desc" aria-hidden="true"></i>
   </div>
 
-  <div class="location-info-box locale-ar" data-region="<%= location.region_ar %>">
-    <ul class="list-unstyled">
-      <li>
-        <h4><%= location.name_ar %></h4>
-      </li>
-      <li>
-        <p>
-          <%=t :region %> : <%= location.region_ar %>
-        </p>
-      </li>
-      <li>
-        <strong>Opening Hours</strong>
-        <p>
-          <%= location.opening_hours_ar %>
-        </p>
-      </li>
-      <li>
-        <p>
-          <%= location.content_ar %>
-        </p>
-      </li>
-    </ul>
-    <%= render partial: 'locations/actions', locals: { location: location, counter: location_counter } %>
+  <%= render partial: 'locations/opening_hours', locals: { location: location } %>
+  <%= render partial: 'locations/actions', locals: { location: location, counter: location_counter } %>
+</div>
+
+<div class="location-info-box clearfix locale-ar" data-region="<%= location.region_ar %>">
+  <h4><%= location.name_ar %></h4>
+  <p><%= location.content_ar %></p>
+
+  <div class="btn data-show" data-show=".opening-hours" data-icon-show="fa-sort-asc" data-icon-hide="fa-sort-desc">
+    <i class="fa fa-sort-desc" aria-hidden="true"></i>
   </div>
+
+  <%= render partial: 'locations/opening_hours', locals: { location: location } %>
+  <%= render partial: 'locations/actions', locals: { location: location, counter: location_counter } %>
 </div>

@@ -3,6 +3,11 @@
   .btn-group {
     float: left!important;
   }
+  .btn {
+    float: left!important;
+    left: 0;
+    right: auto;
+  }
 }
 
 .rtl .pull-right {

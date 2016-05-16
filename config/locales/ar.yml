@@ -68,3 +68,12 @@ ar:
 
   # Buttons
   create_new: "خلق فرص عمل جديدة؟"
+
+  # Days of the week
+  monday: "الإثنين"
+  tuesday: "الثلاثاء"
+  wednesday: "الأربعاء"
+  thursday: "الخميس"
+  friday: "الجمعة"
+  saturday: "يوم السبت"
+  sunday: "الأحد"
