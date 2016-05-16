@@ -12,6 +12,7 @@ class Location < ActiveRecord::Base
   store_accessor :name, [:name_en, :name_ar]
   store_accessor :region, [:region_en, :region_ar]
   store_accessor :opening_hours, [:mon, :tue, :wed, :thu, :fri, :sat, :sun]
+  store_accessor :categories, [:cat_mens, :cat_womens, :cat_kids]
   store_accessor :content, [:content_en, :content_ar]
   belongs_to :brand
 end

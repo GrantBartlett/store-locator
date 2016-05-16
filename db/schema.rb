@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513084636) do
+ActiveRecord::Schema.define(version: 20160516144612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,9 +41,11 @@ ActiveRecord::Schema.define(version: 20160513084636) do
     t.hstore   "region"
     t.hstore   "content"
     t.hstore   "opening_hours"
+    t.hstore   "categories"
   end
 
   add_index "locations", ["brand_id"], name: "index_locations_on_brand_id", using: :btree
+  add_index "locations", ["categories"], name: "index_locations_on_categories", using: :gist
   add_index "locations", ["content"], name: "index_locations_on_content", using: :gist
   add_index "locations", ["name"], name: "index_locations_on_name", using: :gist
   add_index "locations", ["opening_hours"], name: "index_locations_on_opening_hours", using: :gist

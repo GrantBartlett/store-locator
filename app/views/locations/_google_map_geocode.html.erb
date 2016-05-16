@@ -1,10 +1,15 @@
 <h2><%=t :find_by_address %></h2>
+
 <div class="form-group">
   <input id="address" type="textbox" class="form-control" placeholder="<%=t :enter_address %>">
 </div>
 <div class="form-group">
   <input type="button" class="btn btn-success" value="Geocode address" onclick="codeAddress()">
 </div>
+
+<h4>Moving the marker</h4>
+<p>Search for an address and press geocode. If the marker is not in the correct place, simply drag to the correct location. The Longitude and latidude for the location will update when you save.</p>
+
 <div class="embed-responsive embed-map">
   <div id="map" class="embed-responsive-item">
   </div>
