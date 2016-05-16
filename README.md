@@ -1,6 +1,6 @@
 # Store Locator
 A Store locator built with Ruby on Rails and the Google Maps API.
-The idea is to accommodate multiple location programs in a single app.
+The idea is to accommodate multiple location apps for brands in a single app.
 
 ## Installation
 
