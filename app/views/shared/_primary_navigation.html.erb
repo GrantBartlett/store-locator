@@ -13,8 +13,8 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'English', url_for( :locale => 'en' ), method: :get %></li>
-        <li><%= link_to 'Arabic', url_for( :locale => 'ar' ), method: :get %></li>
+        <li class="locale-ar"><%= link_to 'English', url_for( :locale => 'en' ), method: :get %></li>
+        <li class="locale-en"><%= link_to 'Arabic', url_for( :locale => 'ar' ), method: :get %></li>
         <% if logged_in? %>
         <li>
           <div class="avatar small"><%= gravatar_for current_user %></div>
