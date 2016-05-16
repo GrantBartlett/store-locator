@@ -17,10 +17,13 @@
   <h4><%= location.name_ar %></h4>
   <p><%= location.content_ar %></p>
 
-  <div class="btn data-show" data-show=".opening-hours" data-icon-show="fa-sort-asc" data-icon-hide="fa-sort-desc">
+  <div class="btn data-show" data-show=".opening-hours-<%= location_counter %>" data-icon-show="fa-sort-asc" data-icon-hide="fa-sort-desc">
     <i class="fa fa-sort-desc" aria-hidden="true"></i>
   </div>
 
-  <%= render partial: 'locations/opening_hours', locals: { location: location } %>
+  <div class="opening-hours-<%= location_counter %> hidden">
+    <%= render partial: 'locations/opening_hours', locals: { location: location } %>
+  </div>
+
   <%= render partial: 'locations/actions', locals: { location: location, counter: location_counter } %>
 </div>
