@@ -4,9 +4,8 @@ The idea is to accommodate multiple location apps for brands in a single app.
 
 ## Installation
 
-1. npm install
-2. bundle install
-3. `bin/rails` server
+1. bundle install
+2. `bin/rails` server
 
 ## License
 MIT
