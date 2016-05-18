@@ -4,10 +4,10 @@ The idea is to accommodate multiple location apps for brands in a single app.
 
 ## Installation
 
-1. bundle install
+1. `bundle install`
 2. `rake db:create`
 3. `rake db:migrate`
-3. `bin/rails` server
+4. `bin/rails server`
 
 ## License
 MIT
